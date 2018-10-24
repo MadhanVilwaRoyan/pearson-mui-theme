@@ -1,0 +1,28 @@
+{
+  "name": "pearson-mui-theme-example",
+  "homepage": "https://Pearson-Higher-Ed.github.io/pearson-mui-theme",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^3.2.0",
+    "@material-ui/icons": "^3.0.1",
+    "@material-ui/lab": "^3.0.0-alpha.22",
+    "axios": "^0.18.0",
+    "jsx-to-string": "^1.4.0",
+    "pearson-mui-theme": "link:..",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-markdown": "^4.0.3",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.1.4",
+    "react-syntax-highlighter": "^9.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

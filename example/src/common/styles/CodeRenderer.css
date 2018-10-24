@@ -1,0 +1,12 @@
+.code-renderer pre {
+  margin-top: 0 !important;
+}
+
+.code-renderer .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.code-renderer  .code-block {
+}
