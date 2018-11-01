@@ -1,5 +1,4 @@
-import { createMuiTheme, withStyles } from '@material-ui/core/styles';
-import PropTypes from 'prop-types';
+import { createMuiTheme } from '@material-ui/core/styles';
 
 const colors = {
   alto: '#d9d9d9',

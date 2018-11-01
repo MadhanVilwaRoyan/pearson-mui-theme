@@ -1,7 +1,7 @@
 {
   "name": "pearson-mui-theme-example",
   "homepage": "https://Pearson-Higher-Ed.github.io/",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "private": true,
   "dependencies": {
