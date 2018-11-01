@@ -8,5 +8,6 @@ const Sliders = () => (
     <CodeRenderer name={'sliders/VerticalSlider'} />
   </div>
 );
+Sliders.displayName = 'Sliders';
 
 export default Sliders;

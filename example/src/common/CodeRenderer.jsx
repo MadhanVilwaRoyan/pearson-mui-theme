@@ -1,33 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles, createStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import CodeIcon from '@material-ui/icons/Code';
 import IconButton from '@material-ui/core/IconButton';
-
-import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
 import CodeBlock from './CodeBlock';
 import GithubIcon from './GithubIcon';
-
-import './styles/CodeRenderer.css';
+import MarkdownContainer from './MarkdownContainer';
+import ComponentLoader from './ComponentLoader';
 
 const GITHUB_RAW_PATH = 'https://raw.githubusercontent.com/Pearson-Higher-Ed/pearson-mui-theme';
 const GITHUB_CODE_PATH = 'https://github.com/Pearson-Higher-Ed/pearson-mui-theme/blob';
 const REPO_RELATIVE_PATH = 'master/example/src/components';
 
-const styles = theme => ({
+const styles = theme => createStyles({
   root: {
     ...theme.mixins.gutters(),
-    paddingTop: 30,
-    paddingBottom: theme.spacing.unit,
+    padding: 24,
     margin: `${theme.spacing.unit}px auto`,
     maxWidth: 580,
     [theme.breakpoints.only('xs')]: {
       margin: theme.spacing.unit
     }
   },
-  button: {
+  renderer: {
+    '& .header': {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'flex-end'
+    }
   }
 });
 
@@ -49,26 +51,12 @@ class CodeRenderer extends React.Component {
 
   componentWillMount() {
     let name = this.props.name;
-    axios.get(`/docs/${name}.md`).then(
-      (response) => {
-        this.setState({ markdown: response.data })
-      }
-    );
     const rawCodePath = `${GITHUB_RAW_PATH}/${REPO_RELATIVE_PATH}/${name}.jsx`;
     const repoCodePath = `${GITHUB_CODE_PATH}/${REPO_RELATIVE_PATH}/${name}.jsx`;
     axios.get(rawCodePath).then(
       (response) => {
         const code = response.data;
         this.setState({ source: response.data, code: code, repoCodePath})
-      }
-    );
-    import(`../components/${this.props.name}`).then(
-      component => {
-        console.log(component);
-        console.log(React.isValidElement(component.default));
-        this.setState({
-          component: component.default
-        });
       }
     );
   }
@@ -90,11 +78,11 @@ class CodeRenderer extends React.Component {
   );
 
   render() {
-    const { classes } = this.props;
+    const { classes, name } = this.props;
     return (
-      <div className="code-renderer">
+      <div className={classes.renderer}>
         <Paper className={classes.root} elevation={1}>
-          <ReactMarkdown source={this.state.markdown} />
+          <MarkdownContainer name={name} />
           <div className="header">
             <IconButton className={classes.button} aria-label="See Code" onClick={this.handleGithubClick}>
               <GithubIcon />
@@ -105,7 +93,7 @@ class CodeRenderer extends React.Component {
           </div>
           {this.renderCodeBlock()}
           <div>
-            {this.state.component ? <this.state.component /> : null}
+            <ComponentLoader name={name} />
           </div>
         </Paper>
       </div>

@@ -1,8 +1,28 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme, withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
-const pearsonTheme = {
+const colors = {
+  alto: '#d9d9d9',
+  digitalBlue: '#047b9c',
+  digitalMarineTurquoise: '#19a5a3',
+  charcoal: '#252525',
+  concrete: '#c7c7c7',
+  inkBlue: '#005a70',
+  moonlight: '#e9e9e9',
+  sunshineYellow: '#ffb71c',
+  sunflowerYellow: '#ff9b19',
+  whiteGray: '#f5f5f5',
+  white: '#ffffff'
+};
+
+const pearson = {
+  colors
+};
+
+const pearsonMuiTheme = {
+  pearson,
   spacing: {
-    unit: 16,
+    unit: 16
   },
   props: {
     // Name of the component ⚛️
@@ -13,27 +33,27 @@ const pearsonTheme = {
   },
   palette: {
     primary: {
-      main: '#047b9c',
-      dark: '#005a70',
-      contrastText: '#ffffff'
+      main: colors.digitalBlue,
+      dark: colors.inkBlue,
+      contrastText: colors.white
     },
     secondary: {
-      main: '#ffb71c',
-      dark: '#ff9b19',
-      contrastText: '#252525'
+      main: colors.sunshineYellow,
+      dark: colors.sunflowerYellow,
+      contrastText: colors.charcoal
     },
     text: {
-      primary: '#252525',
-      disabled: '#c7c7c7'
+      primary: colors.charcoal,
+      disabled: colors.concrete
     },
     action: {
-      disabled: '#c7c7c7',
-      disabledBackground: '#e9e9e9'
+      disabled: colors.concrete,
+      disabledBackground: colors.moonlight
     }
   },
   typography: {
     useNextVariants: true,
-    color: '#252525',
+    color: colors.charcoal,
     fontFamily: [
       'OpenSans',
       'Calibri',
@@ -57,8 +77,8 @@ const pearsonTheme = {
     },
     MuiAppBar: {
       colorPrimary: {
-        backgroundColor: '#ffffff',
-        color: '#252525',
+        backgroundColor: colors.white,
+        color: colors.charcoal,
         border: '0 none',
         boxShadow: 'none'
       }
@@ -77,9 +97,9 @@ const pearsonTheme = {
         paddingRight: '16px'
       }
     },
-    MuiTabIndicator: {
+    MuiPrivateTabIndicator: {
       colorSecondary: {
-        backgroundColor: '#252525'
+        backgroundColor: colors.charcoal
       }
     },
     MuiTypography: {
@@ -100,7 +120,7 @@ const pearsonTheme = {
         borderRadius: '36px'
       },
       disabled: {
-        backgroundColor: '#e9e9e9',
+        backgroundColor: colors.moonlight,
         border: '0px none'
       },
       contained: {
@@ -111,7 +131,7 @@ const pearsonTheme = {
         borderRadius: '36px'
       },
       containedPrimary: {
-        color: '#fafafa'
+        color: colors.whiteGray
       },
       sizeSmall: {
         padding: '7px 12px',
@@ -124,32 +144,37 @@ const pearsonTheme = {
         borderRadius: '40px',
         fontWeight: 600
       }
-    }
-  },
-  MuiPopover: {
-    root: {
-      borderRadius: '4px',
-      padding: '10px',
-      boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.4)',
-      marginTop: '10px'
     },
-    paper: {
-      padding: '20px',
-      maxWidth: '294px'
-    }
-  },
-  MuiSlider: {
-    root: {},
-    track: {
-      backgroundColor: '#d9d9d9',
-      height: '4px'
+    MuiPopover: {
+      root: {
+        borderRadius: '4px',
+        padding: '24px',
+        boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.4)',
+        marginTop: '10px'
+      },
+      paper: {
+        padding: '24px',
+        maxWidth: '294px'
+      }
     },
-    thumb: {
-      backgroundColor: '#22b6b4',
-      width: '15px',
-      height: '15px'
+    MuiSlider: {
+      root: {},
+      track: {
+        backgroundColor: colors.alto,
+        height: '4px'
+      },
+      thumb: {
+        backgroundColor: colors.digitalMarineTurquoise,
+        width: '15px',
+        height: '15px'
+      }
+    },
+    MuiDialogActions: {
+      root: {
+        margin: 24
+      }
     }
   }
 };
 
-export default createMuiTheme(pearsonTheme)
+export default createMuiTheme(pearsonMuiTheme);

@@ -1,31 +1,40 @@
-# pearson-mui-theme
+# Pearson Material UI Theme
 
-> A Material UI theme implementing Pearson UX specs
+This is Material UI Theme created to match Pearson UX specs as closely as possible.
 
-[![NPM](https://img.shields.io/npm/v/pearson-mui-theme.svg)](https://www.npmjs.com/package/pearson-mui-theme) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
-## Install
-
-```bash
-npm install --save pearson-mui-theme
+### How to use
+First, you have to include Open Sans font in your application. The best way would be add that in the head of
+the application's index.html. Mostly this can be found in the public directory:
+```html
+<link
+  href="https://fonts.googleapis.com/css?family=Open+Sans"
+  rel="stylesheet">
 ```
 
-## Usage
+Install the package in your project. In your app root folder do:
 
-```jsx
-import React, { Component } from 'react'
+**NPM Command**
 
-import MyComponent from 'pearson-mui-theme'
-
-class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
-}
+```shell
+> npm install --save pearson-mui-theme
 ```
 
-## License
+**Yarn Command**
 
-MIT © [Pearson-Higher-Ed](https://github.com/Pearson-Higher-Ed)
+```shell
+> yarn add pearson-mui-theme
+```
+
+Once package is installed, it can be imported and used as your theme.
+```javascript
+import pearsonTheme from 'pearson-mui-theme';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+```
+
+Wrap the theme provider on the root of your app:
+
+```html
+<MuiThemeProvider theme={pearsonTheme}>
+  <YourApp />
+</MuiThemeProvider>
+```

@@ -6,5 +6,6 @@ const Tabs = () => (
     <CodeRenderer name={'tabs/Tabs'} />
   </div>
 );
+Tabs.displayName = 'Tabs';
 
 export default Tabs;

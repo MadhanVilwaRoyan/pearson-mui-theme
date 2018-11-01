@@ -19,7 +19,7 @@
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "surge -p example/build -d pearson-theme.surge.sh"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",

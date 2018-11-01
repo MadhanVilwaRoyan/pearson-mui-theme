@@ -1,6 +1,6 @@
 {
   "name": "pearson-mui-theme-example",
-  "homepage": "https://Pearson-Higher-Ed.github.io/pearson-mui-theme",
+  "homepage": "https://Pearson-Higher-Ed.github.io/",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
@@ -21,8 +21,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build; cp ./build/index.html ./build/200.html",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "surge -p ./build -d pearson-theme.surge.sh"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
