@@ -10,7 +10,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import pearsonTheme from 'pearson-mui-theme';
 import DrawerComponent from './common/DrawerComponent';
 import SampleRenderer from './common/SampleRenderer';
-import Avatars from './components/Avtars';
 
 const styles = {
   pearsonMuiTheme: {
@@ -19,6 +18,11 @@ const styles = {
   }
 };
 
+/**
+ * The main App Component.
+ *
+ * @author Hari Gangadharan
+ */
 class App extends Component {
   constructor(props) {
     super(props);
@@ -52,7 +56,7 @@ class App extends Component {
               <DrawerComponent onClose={this.handleDrawerClose} open={this.state.drawerOpen} />
               <Route exact path="/" render={() => (<SampleRenderer name="Home" />)} />
               <Route exact path="/buttons" render={() => (<SampleRenderer name="Buttons" />)} />
-              <Route exact path="/avatars" render={() => (<Avatars />)} />
+              <Route exact path="/avatars" render={() => (<SampleRenderer name="Avatars" />)} />
               <Route exact path="/typography" render={() => (<SampleRenderer name="Typography" />)} />
               <Route exact path="/tabs" render={() => (<SampleRenderer name="Tabs" />)} />
               <Route exact path="/sliders" render={() => (<SampleRenderer name="Sliders" />)} />

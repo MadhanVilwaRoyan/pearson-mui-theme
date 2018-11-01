@@ -9,6 +9,11 @@ const styles = theme => ({
   }
 });
 
+/**
+ * Renders/demos Call To Action Button.
+ *
+ * @author Hari Gangadharan
+ */
 const component = ({ classes }) => (
   <div className="ctaButtons">
     <Button

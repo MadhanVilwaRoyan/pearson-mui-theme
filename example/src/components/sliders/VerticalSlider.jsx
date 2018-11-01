@@ -13,6 +13,11 @@ const styles = theme => ({
   }
 });
 
+/**
+ * Renders/demos Vertical Slider.
+ *
+ * @author Hari Gangadharan
+ */
 class VerticalSlider extends Component {
   constructor(props) {
     super(props);

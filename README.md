@@ -2,7 +2,7 @@
 
 This is Material UI Theme created to match Pearson UX specs as closely as possible.
 
-### How to use
+## How to use
 First, you have to include Open Sans font in your application. The best way would be add that in the head of
 the application's index.html. Mostly this can be found in the public directory:
 ```html
@@ -38,3 +38,6 @@ Wrap the theme provider on the root of your app:
   <YourApp />
 </MuiThemeProvider>
 ```
+
+## License
+This software is published by Pearson Education under the [MIT license](LICENSE).

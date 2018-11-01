@@ -1,6 +1,11 @@
 import React from 'react'
 import CodeRenderer from '../common/CodeRenderer';
 
+/**
+ * Renders/demos various styles of buttons.
+ *
+ * @author Hari Gangadharan
+ */
 const Buttons = () => (
   <div>
     <CodeRenderer name={'buttons/PrimaryButtons'} />

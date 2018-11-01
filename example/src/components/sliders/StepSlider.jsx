@@ -10,6 +10,11 @@ const styles = theme => ({
   }
 });
 
+/**
+ * Renders/demos Slider with step control.
+ *
+ * @author Hari Gangadharan
+ */
 class StepSlider extends Component {
   constructor(props) {
     super(props);

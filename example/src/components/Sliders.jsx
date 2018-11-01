@@ -1,6 +1,11 @@
 import React from 'react'
 import CodeRenderer from '../common/CodeRenderer';
 
+/**
+ * Renders different types of sliders.
+ *
+ * @author Hari Gangadharan
+ */
 const Sliders = () => (
   <div>
     <CodeRenderer name={'sliders/BasicSlider'} />
@@ -8,6 +13,5 @@ const Sliders = () => (
     <CodeRenderer name={'sliders/VerticalSlider'} />
   </div>
 );
-Sliders.displayName = 'Sliders';
 
 export default Sliders;

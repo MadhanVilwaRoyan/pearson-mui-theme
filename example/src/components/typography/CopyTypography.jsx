@@ -1,6 +1,11 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography';
 
+/**
+ * Renders/demos Copy Typography.
+ *
+ * @author Hari Gangadharan
+ */
 const CopyTypography = () => (
   <div>
     <Typography variant="h5">

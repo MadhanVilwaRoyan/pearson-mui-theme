@@ -33,6 +33,12 @@ const styles = theme => createStyles({
   }
 });
 
+/**
+ * A Component that can render the provided sample code snippet. It also use the MarkdownContainer to load the
+ * documentation associated with this sample code.
+ *
+ * @author Hari Gangadharan
+ */
 class CodeRenderer extends React.Component {
   constructor(props) {
     super(props);

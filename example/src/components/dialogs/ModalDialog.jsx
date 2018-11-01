@@ -6,6 +6,11 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
+/**
+ * Renders/demos Modal Dialog.
+ *
+ * @author Hari Gangadharan
+ */
 class ModalDialog extends React.Component {
   state = {
     open: false,

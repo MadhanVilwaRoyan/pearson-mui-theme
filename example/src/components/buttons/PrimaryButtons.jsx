@@ -9,6 +9,11 @@ const styles = theme => ({
   }
 });
 
+/**
+ * Renders/demos Primary Button.
+ *
+ * @author Hari Gangadharan
+ */
 const component = ({ classes }) => (
   <div className="primaryButtons">
     <Button

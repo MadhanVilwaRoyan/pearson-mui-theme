@@ -7,6 +7,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 import ViewCarousel from '@material-ui/icons/ViewCarousel';
 import Home from '@material-ui/icons/Home';
 import Apps from '@material-ui/icons/Apps';
@@ -20,6 +21,11 @@ const styles = {
   }
 };
 
+/**
+ * Drawer component for menu.
+ *
+ * @author Hari Gangadharan
+ */
 const DrawerComponent = ({ classes, open, onClose }) => (
   <Drawer open={open} onClose={onClose} >
     <div className={classes.drawer} onClick={onClose}>
@@ -29,6 +35,12 @@ const DrawerComponent = ({ classes, open, onClose }) => (
             <Home />
           </ListItemIcon>
           <ListItemText primary="Home" />
+        </ListItem>
+        <ListItem component={Link} to="/avatars">
+          <ListItemIcon>
+            <AccountCircle />
+          </ListItemIcon>
+          <ListItemText primary="Avatars" />
         </ListItem>
         <ListItem component={Link} to="/buttons">
           <ListItemIcon>

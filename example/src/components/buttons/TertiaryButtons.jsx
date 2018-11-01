@@ -9,6 +9,11 @@ const styles = theme => ({
   }
 });
 
+/**
+ * Renders/demos Tertiary Button.
+ *
+ * @author Hari Gangadharan
+ */
 const component = ({ classes }) => (
   <div className="tertiaryButtons">
     <Button

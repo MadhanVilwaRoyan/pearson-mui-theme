@@ -10,6 +10,11 @@ const styles = theme => ({
   }
 });
 
+/**
+ * Renders/demos Basic Slider.
+ *
+ * @author Hari Gangadharan
+ */
 class BasicSlider extends Component {
   constructor(props) {
     super(props);

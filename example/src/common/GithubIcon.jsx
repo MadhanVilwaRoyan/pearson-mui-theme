@@ -1,6 +1,11 @@
 import React from 'react'
 import SvgIcon from '@material-ui/core/SvgIcon';
 
+/**
+ * Github Icon as SvgIcon
+ *
+ * @author Hari Gangadharan
+ */
 const GithubIcon = () => (
   <SvgIcon>
     <path

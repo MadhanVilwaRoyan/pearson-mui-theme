@@ -5,6 +5,11 @@ import Markdown from './Markdown';
 
 const GITHUB_DOC_ROOT = '/docs';
 
+/**
+ * A Component that helps download and render markdown from public/docs folder.
+ *
+ * @author Hari Gangadharan
+ */
 class MarkdownContainer extends React.Component {
   constructor(props) {
     super(props);

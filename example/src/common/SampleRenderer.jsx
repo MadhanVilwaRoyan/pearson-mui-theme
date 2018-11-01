@@ -17,6 +17,12 @@ const styles = theme => ({
   }
 });
 
+/**
+ * A Component that can render the provided sample code. It also use the MarkdownContainer to load the
+ * documentation associated with this sample code.
+ *
+ * @author Hari Gangadharan
+ */
 const SampleRenderer = ({ classes, name }) => (
   <div>
     <Paper className={classes.root} elevation={1}>

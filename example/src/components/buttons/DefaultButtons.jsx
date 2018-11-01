@@ -9,6 +9,11 @@ const styles = theme => ({
   }
 });
 
+/**
+ * Renders/demos Default Button.
+ *
+ * @author Hari Gangadharan
+ */
 const component = ({ classes }) => (
   <div className="defaultButtons">
     <Button

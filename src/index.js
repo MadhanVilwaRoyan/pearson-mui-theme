@@ -15,7 +15,11 @@ const colors = {
 };
 
 const pearson = {
-  colors
+  colors,
+  avatar: {
+    small: 60,
+    large: 120
+  }
 };
 
 const pearsonMuiTheme = {

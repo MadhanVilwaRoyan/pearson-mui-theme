@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * A Component that helps dynamically load other React components.
+ *
+ * @author Hari Gangadharan
+ */
 class ComponentLoader extends React.Component {
   constructor(props) {
     super(props);
@@ -12,8 +17,6 @@ class ComponentLoader extends React.Component {
   componentWillMount() {
     import(`../components/${this.props.name}`).then(
       component => {
-        console.log(component);
-        console.log(React.isValidElement(component.default));
         this.setState({
           component: component.default
         });
