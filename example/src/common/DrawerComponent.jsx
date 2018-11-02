@@ -13,6 +13,7 @@ import Home from '@material-ui/icons/Home';
 import Apps from '@material-ui/icons/Apps';
 import Tab from '@material-ui/icons/Tab';
 import SwapHorizontalCircle from '@material-ui/icons/SwapHorizontalCircle';
+import SelectAllRounded from '@material-ui/icons/Adjust';
 import WebAsset from '@material-ui/icons/WebAsset';
 
 const styles = {
@@ -47,6 +48,12 @@ const DrawerComponent = ({ classes, open, onClose }) => (
             <Apps />
           </ListItemIcon>
           <ListItemText primary="Buttons" />
+        </ListItem>
+        <ListItem component={Link} to="/selections">
+          <ListItemIcon>
+            <SelectAllRounded />
+          </ListItemIcon>
+          <ListItemText primary="Selection Controls" />
         </ListItem>
         <ListItem component={Link} to="/tabs">
           <ListItemIcon>

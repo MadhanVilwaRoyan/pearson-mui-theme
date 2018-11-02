@@ -16,6 +16,10 @@ const colors = {
 
 const pearson = {
   colors,
+  selections: {
+    radio: {
+    }
+  },
   avatar: {
     small: 60,
     large: 120
@@ -25,7 +29,7 @@ const pearson = {
 const pearsonMuiTheme = {
   pearson,
   spacing: {
-    unit: 16
+    unit: 18
   },
   props: {
     // Name of the component ⚛️
@@ -47,7 +51,9 @@ const pearsonMuiTheme = {
     },
     text: {
       primary: colors.charcoal,
-      disabled: colors.concrete
+      secondary: colors.charcoal,
+      disabled: colors.concrete,
+      hint: colors.charcoal
     },
     action: {
       disabled: colors.concrete,
@@ -64,7 +70,7 @@ const pearsonMuiTheme = {
       'sans-serif'
     ],
     fontSize: 14,
-    lineHeight: 18
+    lineHeight: 1.38
   },
   overrides: {
     MuiPaper: {
@@ -107,6 +113,14 @@ const pearsonMuiTheme = {
     },
     MuiTypography: {
       root: {
+        lineHeight: 1.38,
+        fontSize: 16
+      },
+      body1: {
+        fontSize: 16
+      },
+      body2: {
+        fontSize: 16
       }
     },
     MuiAvatar: {
@@ -175,6 +189,31 @@ const pearsonMuiTheme = {
     MuiDialogActions: {
       root: {
         margin: 24
+      }
+    },
+    MuiRadio: {
+      root: {
+        paddingTop: 2,
+        '&$checked': {
+          '& + span': {
+            fontWeight: 700,
+            color: colors.digitalBlue
+          }
+        }
+      }
+    },
+    MuiFormLabel: {
+      root: {
+        lineHeight: 1.38,
+        '&$focused': {
+          color: colors.charcoal
+        }
+      }
+    },
+    MuiFormControlLabel: {
+      root: {
+        alignItems: 'flex-start',
+        paddingTop: 30
       }
     }
   }

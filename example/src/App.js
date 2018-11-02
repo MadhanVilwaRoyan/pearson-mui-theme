@@ -56,6 +56,7 @@ class App extends Component {
               <DrawerComponent onClose={this.handleDrawerClose} open={this.state.drawerOpen} />
               <Route exact path="/" render={() => (<SampleRenderer name="Home" />)} />
               <Route exact path="/buttons" render={() => (<SampleRenderer name="Buttons" />)} />
+              <Route exact path="/selections" render={() => (<SampleRenderer name="Selections" />)} />
               <Route exact path="/avatars" render={() => (<SampleRenderer name="Avatars" />)} />
               <Route exact path="/typography" render={() => (<SampleRenderer name="Typography" />)} />
               <Route exact path="/tabs" render={() => (<SampleRenderer name="Tabs" />)} />
