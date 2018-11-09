@@ -1,13 +1,16 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const colors = {
+  transparent: 'transparent',
   alto: '#d9d9d9',
   digitalBlue: '#047b9c',
   digitalMarineTurquoise: '#19a5a3',
   charcoal: '#252525',
   concrete: '#c7c7c7',
+  focusBlue: '#1977D4',
   inkBlue: '#005a70',
   moonlight: '#e9e9e9',
+  strawberryRed: '#db0021',
   sunshineYellow: '#ffb71c',
   sunflowerYellow: '#ff9b19',
   whiteGray: '#f5f5f5',
@@ -15,6 +18,20 @@ const colors = {
 };
 
 const pearson = {
+  font: {
+    family: [
+      'OpenSans',
+      'Calibri',
+      'Tahoma',
+      'sans-serif'
+    ],
+    size: {
+      regular: 14
+    }
+  },
+  lineHeight: {
+    normal: 1.38
+  },
   colors,
   selections: {
     radio: {
@@ -63,25 +80,15 @@ const pearsonMuiTheme = {
   typography: {
     useNextVariants: true,
     color: colors.charcoal,
-    fontFamily: [
-      'OpenSans',
-      'Calibri',
-      'Tahoma',
-      'sans-serif'
-    ],
-    fontSize: 14,
-    lineHeight: 1.38
+    fontFamily: pearson.font.family,
+    fontSize: pearson.font.size.regular,
+    lineHeight: pearson.lineHeight.normal
   },
   overrides: {
     MuiPaper: {
       root: {
-        fontFamily: [
-          'OpenSans',
-          'Calibri',
-          'Tahoma',
-          'sans-serif'
-        ],
-        fontSize: 14
+        fontFamily: pearson.font.size.regular,
+        fontSize: pearson.font.size.regular
       }
     },
     MuiAppBar: {
@@ -129,12 +136,56 @@ const pearsonMuiTheme = {
         width: '50px'
       }
     },
+    MuiButtonBase: {
+      root: {
+        border: `2px solid ${colors.transparent}`,
+      },
+      focusVisible: {
+        '&:after': {
+          content: '""',
+          position: 'absolute',
+          top: -6,
+          left: -6,
+          borderRadius: 36,
+          width: 'calc(100% + 8px)',
+          height: 'calc(100% + 8px)',
+          border: `2px solid ${colors.focusBlue}`
+        }
+      }
+    },
     MuiButton: {
       root: {
         textTransform: 'none'
       },
+      text: {
+        borderRadius: '36px'
+      },
       outlined: {
         borderRadius: '36px'
+      },
+      textPrimary: {
+        color: colors.whiteGray,
+        backgroundColor: colors.strawberryRed,
+        '&:hover': {
+          color: colors.white,
+          backgroundColor: colors.strawberryRed
+        }
+      },
+      outlinedPrimary: {
+        color: colors.whiteGray,
+        backgroundColor: colors.digitalBlue,
+        borderColor: colors.digitalBlue,
+        '&:hover': {
+          backgroundColor: colors.inkBlue
+        }
+      },
+      outlinedSecondary: {
+        color: colors.charcoal,
+        backgroundColor: colors.sunshineYellow,
+        borderColor: colors.sunshineYellow,
+        '&:hover': {
+          backgroundColor: colors.sunflowerYellow
+        }
       },
       disabled: {
         backgroundColor: colors.moonlight,
@@ -145,7 +196,11 @@ const pearsonMuiTheme = {
         fontSize: '14px',
         lineHeight: '18px',
         fontWeight: 600,
-        borderRadius: '36px'
+        borderRadius: '36px',
+        '&$focusVisible': {
+          boxShadow: `0 0 0 2pt ${colors.focusBlue}`,
+          border: '2px solid white'
+        }
       },
       containedPrimary: {
         color: colors.whiteGray

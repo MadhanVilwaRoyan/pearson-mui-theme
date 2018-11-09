@@ -10,34 +10,35 @@ const styles = theme => ({
 });
 
 /**
- * Renders/demos Call To Action Button.
+ * Renders/demos Default Button.
  *
  * @author Hari Gangadharan
  */
 const component = ({ classes }) => (
-  <div className="ctaButtons">
+  <div className="defaultButtons">
     <Button
-      variant="outlined"
-      color="secondary"
+      variant="text"
+      color="primary"
       size="small"
       className={classes.button}
     >Small Button</Button>
 
     <Button
-      variant="outlined"
-      color="secondary"
+      variant="text"
+      color="primary"
       size="medium"
       className={classes.button}
     >Medium Button</Button>
 
     <Button
-      variant="outlined"
-      color="secondary"
+      variant="text"
+      color="primary"
       size="large"
       className={classes.button}
     >Large Button</Button>
   </div>
 );
+
 
 component.propTypes = {
   classes: PropTypes.object.isRequired,

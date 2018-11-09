@@ -28,7 +28,7 @@ class ModalDialog extends React.Component {
     return (
       <div className="App-wrap dialog-wrap">
         <Button
-          variant="contained"
+          variant="outlined"
           color="primary"
           onClick={this.handleClickOpen}
         >Open alert dialog</Button>
@@ -52,7 +52,7 @@ class ModalDialog extends React.Component {
             >Cancel</Button>
             <Button
               autoFocus
-              variant="contained"
+              variant="text"
               color="primary"
               onClick={this.handleClose}
             >Delete</Button>

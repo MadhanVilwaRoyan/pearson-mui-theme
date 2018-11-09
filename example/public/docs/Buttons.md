@@ -15,11 +15,11 @@ Visit [Button](https://uxframework.pearson.com/nightly/buttons) in Pearson UX sp
 
 |variant|color|Description|
 |:---|:---|:---|
-|contained | primary   | Primary button |
-|contained | secondary | CTA button     |
+|outlined  | primary   | Primary button |
+|outlined  | secondary | CTA button     |
 |contained | default   | Tertiary button|
-|outlined | default   | Default button|
-
+|outlined  | default   | Default button|
+|text      | primary   | DA Button |
 
 
 

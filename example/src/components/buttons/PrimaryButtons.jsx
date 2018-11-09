@@ -17,21 +17,21 @@ const styles = theme => ({
 const component = ({ classes }) => (
   <div className="primaryButtons">
     <Button
-      variant="contained"
+      variant="outlined"
       color="primary"
       size="small"
       className={classes.button}
     >Small Button</Button>
 
     <Button
-      variant="contained"
+      variant="outlined"
       color="primary"
       size="medium"
       className={classes.button}
     >Medium Button</Button>
 
     <Button
-      variant="contained"
+      variant="outlined"
       color="primary"
       size="large"
       className={classes.button}
