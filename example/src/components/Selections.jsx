@@ -9,6 +9,7 @@ import CodeRenderer from '../common/CodeRenderer';
 const Sliders = () => (
   <div>
     <CodeRenderer name={'selections/RadioButtons'} />
+    <CodeRenderer outside name={'selections/SelectableCards'} />
   </div>
 );
 

@@ -16,6 +16,7 @@ const styles = theme => ({
  */
 const component = ({ classes }) => (
   <div className="ctaButtons">
+
     <Button
       variant="outlined"
       color="secondary"

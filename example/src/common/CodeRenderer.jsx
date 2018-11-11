@@ -19,8 +19,13 @@ const styles = theme => createStyles({
     ...theme.mixins.gutters(),
     padding: 24,
     margin: `${theme.spacing.unit}px auto`,
-    maxWidth: 580,
+    maxWidth: 620,
     [theme.breakpoints.only('xs')]: {
+      margin: theme.spacing.unit
+    }
+  },
+  '@media (max-width: 740px)': {
+    root: {
       margin: theme.spacing.unit
     }
   },
@@ -52,7 +57,12 @@ class CodeRenderer extends React.Component {
   }
 
   static propTypes = {
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
+    outside: PropTypes.bool
+  };
+
+  static defaultProps = {
+    outside: false
   };
 
   componentWillMount() {
@@ -84,7 +94,7 @@ class CodeRenderer extends React.Component {
   );
 
   render() {
-    const { classes, name } = this.props;
+    const { classes, name, outside } = this.props;
     return (
       <div className={classes.renderer}>
         <Paper className={classes.root} elevation={1}>
@@ -99,9 +109,10 @@ class CodeRenderer extends React.Component {
           </div>
           {this.renderCodeBlock()}
           <div>
-            <ComponentLoader name={name} />
+            {outside ? null : <ComponentLoader name={name} />}
           </div>
         </Paper>
+        {outside ? <ComponentLoader name={name} /> : null}
       </div>
     )
   }

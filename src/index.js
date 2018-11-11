@@ -1,20 +1,34 @@
+import React from 'react';
 import { createMuiTheme } from '@material-ui/core/styles';
+import colors from './colors';
+import SelectedCircle from './icons/SelectedCircle';
+import Unselected from './icons/Unselected';
 
-const colors = {
-  transparent: 'transparent',
-  alto: '#d9d9d9',
-  digitalBlue: '#047b9c',
-  digitalMarineTurquoise: '#19a5a3',
-  charcoal: '#252525',
-  concrete: '#c7c7c7',
-  focusBlue: '#1977D4',
-  inkBlue: '#005a70',
-  moonlight: '#e9e9e9',
-  strawberryRed: '#db0021',
-  sunshineYellow: '#ffb71c',
-  sunflowerYellow: '#ff9b19',
-  whiteGray: '#f5f5f5',
-  white: '#ffffff'
+const pseodoOutline = (padding) => (
+  {
+    content: '""',
+    position: 'absolute',
+    top: - (padding * 3),
+    left: - (padding * 3),
+    borderRadius: 36,
+    width: `calc(100% + ${padding * 4}px)`,
+    height: `calc(100% + ${padding * 4}px)`,
+    border: `2px solid ${colors.focusBlue}`
+  }
+);
+
+
+
+const icons = {
+  checkbox: {
+    normal: {
+      checked: <SelectedCircle />
+    },
+    fancy: {
+      unchecked: <Unselected size="small" color="primary" />,
+      checked: <SelectedCircle size="small" color="primary" />
+    }
+  }
 };
 
 const pearson = {
@@ -26,16 +40,28 @@ const pearson = {
       'sans-serif'
     ],
     size: {
-      regular: 14
+      normal: 14
     }
+  },
+  borderRadius: {
+    normal: 36
   },
   lineHeight: {
-    normal: 1.38
+    xxl: 1.58,
+    xl: 1.5,
+    l: 1.38,
+    m: 1.33,
+    s: 1.29,
+    xs: 1.25,
+    xxs: 1.167
   },
   colors,
-  selections: {
-    radio: {
-    }
+  iconSize: {
+    normal: 19
+  },
+  padding: {
+    small: 10,
+    normal: 16
   },
   avatar: {
     small: 60,
@@ -81,14 +107,16 @@ const pearsonMuiTheme = {
     useNextVariants: true,
     color: colors.charcoal,
     fontFamily: pearson.font.family,
-    fontSize: pearson.font.size.regular,
-    lineHeight: pearson.lineHeight.normal
+    fontSize: pearson.font.size.normal,
+    lineHeight: pearson.lineHeight.l
+  },
+  mixins: {
   },
   overrides: {
     MuiPaper: {
       root: {
-        fontFamily: pearson.font.size.regular,
-        fontSize: pearson.font.size.regular
+        fontFamily: pearson.font.size.large,
+        fontSize: pearson.font.size.large
       }
     },
     MuiAppBar: {
@@ -120,11 +148,57 @@ const pearsonMuiTheme = {
     },
     MuiTypography: {
       root: {
-        lineHeight: 1.38,
+        lineHeight: pearson.lineHeight.l,
+        color: colors.charcoal,
         fontSize: 16
       },
+      h1: {
+        fontSize: 24,
+        lineHeight: pearson.lineHeight.l
+      },
+      h2: {
+        fontSize: 28,
+        fontWeight: 'bold',
+        lineHeight: pearson.lineHeight.m
+      },
+      h3: {
+        fontSize: 16,
+        fontWeight: 600,
+        letterSpacing: '0.15px',
+        lineHeight: pearson.lineHeight.m
+      },
+      h4: {
+        fontSize: 16,
+        letterSpacing: 'normal',
+        lineHeight: pearson.lineHeight.xl
+      },
+      h5: {
+        fontSize: 15,
+        letterSpacing: 0.3,
+        lineHeight: pearson.lineHeight.m,
+        color: colors.mediumGray
+      },
+      h6: {
+        fontSize: 24,
+        lineHeight: pearson.lineHeight.xxs,
+        color: colors.charcoal
+      },
+      subtitle1: {
+        fontSize: 14,
+        letterSpacing: 0.15,
+        lineHeight: 'normal'
+      },
+      subtitle2: {
+        fontSize: 12,
+        fontWeight: 600,
+        color: colors.mediumGray,
+        letterSpacing: -0.3,
+        lineHeight: pearson.lineHeight.xl
+      },
       body1: {
-        fontSize: 16
+        fontSize: 16,
+        color: colors.mediumGray,
+        lineHeight: pearson.lineHeight.xs
       },
       body2: {
         fontSize: 16
@@ -141,27 +215,19 @@ const pearsonMuiTheme = {
         border: `2px solid ${colors.transparent}`,
       },
       focusVisible: {
-        '&:after': {
-          content: '""',
-          position: 'absolute',
-          top: -6,
-          left: -6,
-          borderRadius: 36,
-          width: 'calc(100% + 8px)',
-          height: 'calc(100% + 8px)',
-          border: `2px solid ${colors.focusBlue}`
-        }
-      }
+        '&:after': pseodoOutline(2)
+      },
     },
     MuiButton: {
       root: {
         textTransform: 'none'
       },
       text: {
-        borderRadius: '36px'
+        borderRadius: pearson.borderRadius.normal,
+        backgroundColor: colors.alto
       },
       outlined: {
-        borderRadius: '36px'
+        borderRadius: pearson.borderRadius.normal
       },
       textPrimary: {
         color: colors.whiteGray,
@@ -196,11 +262,7 @@ const pearsonMuiTheme = {
         fontSize: '14px',
         lineHeight: '18px',
         fontWeight: 600,
-        borderRadius: '36px',
-        '&$focusVisible': {
-          boxShadow: `0 0 0 2pt ${colors.focusBlue}`,
-          border: '2px solid white'
-        }
+        borderRadius: '36px'
       },
       containedPrimary: {
         color: colors.whiteGray
@@ -215,6 +277,33 @@ const pearsonMuiTheme = {
         lineHeight: '20px',
         borderRadius: '40px',
         fontWeight: 600
+      }
+    },
+    MuiCardActions: {
+      root: {
+        '@media (min-width:600px)': {
+          paddingLeft: 8,
+          paddingTop: 12
+        }
+      }
+    },
+    MuiCardContent: {
+      root: {
+        paddingTop: 0,
+        paddingBottom: pearson.padding.normal,
+        paddingLeft: pearson.padding.normal,
+        paddingRight: pearson.padding.normal,
+        '@media (min-width:600px)': {
+          paddingLeft: pearson.padding.normal,
+          paddingRight: pearson.padding.small
+        }
+      }
+    },
+    MuiDivider: {
+      root: {
+        backgroundColor: colors.alto,
+        marginTop: pearson.padding.normal,
+        marginBottom: pearson.padding.normal
       }
     },
     MuiPopover: {
@@ -241,9 +330,22 @@ const pearsonMuiTheme = {
         height: '15px'
       }
     },
+    MuiSvgIcon: {
+      colorPrimary: {
+        fill: colors.whiteGray
+      },
+      colorSecondary: {
+        fill: colors.charcoal
+      }
+    },
     MuiDialogActions: {
       root: {
         margin: 24
+      }
+    },
+    MuiIconButton: {
+      root: {
+        padding: 5
       }
     },
     MuiRadio: {
@@ -275,3 +377,7 @@ const pearsonMuiTheme = {
 };
 
 export default createMuiTheme(pearsonMuiTheme);
+
+export { default as SelectedCircle } from './icons/SelectedCircle';
+export { default as CardList } from './components/CardList';
+export { icons };

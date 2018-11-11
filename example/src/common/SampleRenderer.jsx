@@ -10,11 +10,16 @@ const styles = theme => ({
     paddingTop: 30,
     paddingBottom: theme.spacing.unit,
     margin: `${theme.spacing.unit}px auto`,
-    maxWidth: 580,
+    maxWidth: 620,
     [theme.breakpoints.only('xs')]: {
       margin: theme.spacing.unit
     }
-  }
+  },
+  '@media (max-width: 740px)': {
+    root: {
+      margin: theme.spacing.unit
+    }
+  },
 });
 
 /**

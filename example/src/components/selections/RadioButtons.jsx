@@ -7,11 +7,15 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
+import { icons } from 'pearson-mui-theme';
 
 const styles = theme => ({
   value: {
     paddingTop: theme.spacing.unit,
     paddingBottom: theme.spacing.unit
+  },
+  icon: {
+    width: theme.pearson.iconSize.normal
   }
 });
 
@@ -77,8 +81,11 @@ class RadioButtons extends React.Component {
               value="answer4"
               control={<Radio color="primary" />}
               label={
-                `They concluded that differences in behavior were biological and claimed that people's biology
-                 determined how their societies were organized.`
+                <div>
+                  <span>D.</span>
+                  <span>They concluded that differences in behavior were biological and claimed that people's biology
+                  determined how their societies were organized.</span>
+                </div>
               }
             />
             <FormControlLabel
@@ -99,7 +106,7 @@ class RadioButtons extends React.Component {
 }
 
 RadioButtons.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(RadioButtons);

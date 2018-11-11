@@ -8,11 +8,35 @@ import Typography from '@material-ui/core/Typography';
  */
 const CopyTypography = () => (
   <div>
+    <Typography variant="h1">
+      This is the h1 style
+    </Typography>
+    <Typography variant="h2">
+      This is the h2 style
+    </Typography>
+    <Typography variant="h3">
+      This is the h3 style
+    </Typography>
+    <Typography variant="h4">
+      This is the h4 style
+    </Typography>
     <Typography variant="h5">
-      Big Bad Heading (Level 1)
+      This is the h5 style
     </Typography>
     <Typography variant="h6">
-      Smaller, Less Bad, Heading (Level 2)
+      This is the h6 style
+    </Typography>
+    <Typography variant="subtitle1">
+      This is the subtitle1 style
+    </Typography>
+    <Typography variant="subtitle2">
+      This is the subtitle2 style
+    </Typography>
+    <Typography variant="body1">
+      This is the body 1 style
+    </Typography>
+    <Typography variant="body2">
+      This is the body 2 style
     </Typography>
   </div>
 );

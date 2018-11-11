@@ -17,21 +17,21 @@ const styles = theme => ({
 const component = ({ classes }) => (
   <div className="tertiaryButtons">
     <Button
-      variant="contained"
+      variant="text"
       color="default"
       size="small"
       className={classes.button}
     >Small Button</Button>
 
     <Button
-      variant="contained"
+      variant="text"
       color="default"
       size="medium"
       className={classes.button}
     >Medium Button</Button>
 
     <Button
-      variant="contained"
+      variant="text"
       color="default"
       size="large"
       className={classes.button}
@@ -40,7 +40,7 @@ const component = ({ classes }) => (
 );
 
 component.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(component);
