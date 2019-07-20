@@ -7,12 +7,11 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import { icons } from 'pearson-mui-theme';
 
 const styles = theme => ({
   value: {
-    paddingTop: theme.spacing.unit,
-    paddingBottom: theme.spacing.unit
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(1)
   },
   icon: {
     width: theme.pearson.iconSize.normal

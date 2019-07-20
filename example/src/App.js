@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { MuiThemeProvider, withStyles, createGenerateClassName, jssPreset } from '@material-ui/core/styles';
+import { ThemeProvider,  jssPreset } from '@material-ui/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -12,13 +13,6 @@ import pearsonTheme from 'pearson-mui-theme';
 import DrawerComponent from './common/DrawerComponent';
 import SampleRenderer from './common/SampleRenderer';
 
-const styles = {
-  pearsonMuiTheme: {
-    margin: '30px auto'
-  }
-};
-
-const generateClassName = createGenerateClassName();
 const jss = create({
   ...jssPreset(),
   // We define a custom insertion point that JSS will look for injecting the styles in the DOM.
@@ -47,11 +41,10 @@ class App extends Component {
   };
 
   render () {
-    const { classes } = this.props;
     return (
       <div>
-        <JssProvider jss={jss} classNamePrefix={'pmui-'} generateClassName={generateClassName}>
-          <MuiThemeProvider theme={pearsonTheme}>
+        <JssProvider jss={jss} classNamePrefix={'pmui'}>
+          <ThemeProvider theme={createMuiTheme(pearsonTheme)}>
             <AppBar color="primary" position="static" >
               <Toolbar>
                 <IconButton color="inherit" aria-label="Menu" onClick={this.handleMenuClick}>
@@ -60,10 +53,11 @@ class App extends Component {
               </Toolbar>
             </AppBar>
             <BrowserRouter>
-              <div className={classes.pearsonMuiTheme}>
+              <div className="pearsonMuiTheme">
                 <DrawerComponent onClose={this.handleDrawerClose} open={this.state.drawerOpen} />
                 <Route exact path="/" render={() => (<SampleRenderer name="Home" />)} />
                 <Route exact path="/buttons" render={() => (<SampleRenderer name="Buttons" />)} />
+                <Route exact path="/inputs" render={() => (<SampleRenderer name="Inputs" />)} />
                 <Route exact path="/selections" render={() => (<SampleRenderer name="Selections" />)} />
                 <Route exact path="/avatars" render={() => (<SampleRenderer name="Avatars" />)} />
                 <Route exact path="/typography" render={() => (<SampleRenderer name="Typography" />)} />
@@ -72,7 +66,7 @@ class App extends Component {
                 <Route exact path="/dialogs" render={() => (<SampleRenderer name="Dialogs" />)} />
               </div>
             </BrowserRouter>
-          </MuiThemeProvider>
+          </ThemeProvider>
         </JssProvider>
       </div>
     )
@@ -83,4 +77,4 @@ App.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(App);
+export default App;

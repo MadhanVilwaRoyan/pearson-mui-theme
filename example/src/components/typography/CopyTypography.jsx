@@ -8,7 +8,13 @@ import Typography from '@material-ui/core/Typography';
  */
 const CopyTypography = () => (
   <div>
-    <Typography variant="h1">
+    <Typography color="primary" variant="h1">
+      This is the h1 style
+    </Typography>
+    <Typography color="secondary" variant="h1">
+      This is the h1 style
+    </Typography>
+    <Typography color="default" variant="h1">
       This is the h1 style
     </Typography>
     <Typography variant="h2">

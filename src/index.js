@@ -1,5 +1,4 @@
 import React from 'react';
-import { createMuiTheme } from '@material-ui/core/styles';
 import colors from './colors';
 import SelectedCircle from './icons/SelectedCircle';
 import Unselected from './icons/Unselected';
@@ -8,8 +7,8 @@ const pseodoOutline = (padding) => (
   {
     content: '""',
     position: 'absolute',
-    top: - (padding * 3),
-    left: - (padding * 3),
+    top: -(padding * 3),
+    left: -(padding * 3),
     borderRadius: 36,
     width: `calc(100% + ${padding * 4}px)`,
     height: `calc(100% + ${padding * 4}px)`,
@@ -71,9 +70,7 @@ const pearson = {
 
 const pearsonMuiTheme = {
   pearson,
-  spacing: {
-    unit: 18
-  },
+  spacing: 16,
   props: {
     // Name of the component ⚛️
     MuiButtonBase: {
@@ -141,20 +138,22 @@ const pearsonMuiTheme = {
         paddingRight: '16px'
       }
     },
-    MuiPrivateTabIndicator: {
+    PrivateTabIndicator: {
       colorSecondary: {
         backgroundColor: colors.charcoal
       }
     },
     MuiTypography: {
+      colorSecondary: {
+        color: colors.mediumGray
+      },
       root: {
         lineHeight: pearson.lineHeight.l,
         color: colors.charcoal,
         fontSize: 16
       },
       h1: {
-        fontSize: 24,
-        lineHeight: pearson.lineHeight.l
+        fontSize: 24
       },
       h2: {
         fontSize: 28,
@@ -359,6 +358,15 @@ const pearsonMuiTheme = {
         }
       }
     },
+    MuiFormControl: {
+    },
+    MuiUnderline: {
+      root: {
+        '&:after': {
+          borderBottomWidth: 4
+        }
+      }
+    },
     MuiFormLabel: {
       root: {
         lineHeight: 1.38,
@@ -376,7 +384,7 @@ const pearsonMuiTheme = {
   }
 };
 
-export default createMuiTheme(pearsonMuiTheme);
+export default pearsonMuiTheme;
 
 export { default as SelectedCircle } from './icons/SelectedCircle';
 export { default as CardList } from './components/CardList';

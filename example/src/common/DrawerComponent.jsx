@@ -18,7 +18,7 @@ import WebAsset from '@material-ui/icons/WebAsset';
 
 const styles = {
   drawer: {
-    minWidth: 220
+    minWidth: 260
   }
 };
 
@@ -48,6 +48,12 @@ const DrawerComponent = ({ classes, open, onClose }) => (
             <Apps />
           </ListItemIcon>
           <ListItemText primary="Buttons" />
+        </ListItem>
+        <ListItem component={Link} to="/inputs">
+          <ListItemIcon>
+            <Apps />
+          </ListItemIcon>
+          <ListItemText primary="Inputs" />
         </ListItem>
         <ListItem component={Link} to="/selections">
           <ListItemIcon>

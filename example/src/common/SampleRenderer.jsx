@@ -4,23 +4,25 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import MarkdownContainer from './MarkdownContainer';
 import ComponentLoader from './ComponentLoader';
-const styles = theme => ({
+const styles = theme => {
+  return ({
   root: {
     ...theme.mixins.gutters(),
-    paddingTop: 30,
-    paddingBottom: theme.spacing.unit,
-    margin: `${theme.spacing.unit}px auto`,
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
+    margin: `${theme.spacing(1)}px auto`,
     maxWidth: 620,
     [theme.breakpoints.only('xs')]: {
-      margin: theme.spacing.unit
+      margin: theme.spacing(1)
     }
   },
   '@media (max-width: 740px)': {
     root: {
-      margin: theme.spacing.unit
+      margin: theme.spacing(1)
     }
   },
-});
+})
+};
 
 /**
  * A Component that can render the provided sample code. It also use the MarkdownContainer to load the

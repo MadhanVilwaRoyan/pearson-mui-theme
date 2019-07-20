@@ -17,16 +17,16 @@ const REPO_RELATIVE_PATH = 'master/example/src/components';
 const styles = theme => createStyles({
   root: {
     ...theme.mixins.gutters(),
-    padding: 24,
-    margin: `${theme.spacing.unit}px auto`,
+    padding: theme.spacing(2),
+    margin: `${theme.spacing(1)}px auto`,
     maxWidth: 620,
     [theme.breakpoints.only('xs')]: {
-      margin: theme.spacing.unit
+      margin: theme.spacing(1)
     }
   },
   '@media (max-width: 740px)': {
     root: {
-      margin: theme.spacing.unit
+      margin: theme.spacing(1)
     }
   },
   renderer: {
