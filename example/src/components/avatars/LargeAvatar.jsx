@@ -9,7 +9,7 @@ const styles = theme => ({
     justifyContent: 'center',
   },
   largeAvatar: {
-    margin: theme.spacing(1),
+    margin: theme.spacing.unit,
     width: theme.pearson.avatar.large,
     height: theme.pearson.avatar.large
   }

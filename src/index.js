@@ -16,8 +16,6 @@ const pseodoOutline = (padding) => (
   }
 );
 
-
-
 const icons = {
   checkbox: {
     normal: {
@@ -70,7 +68,7 @@ const pearson = {
 
 const pearsonMuiTheme = {
   pearson,
-  spacing: 16,
+  spacing: { unit: 16 },
   props: {
     // Name of the component ⚛️
     MuiButtonBase: {
@@ -126,19 +124,29 @@ const pearsonMuiTheme = {
     },
     MuiTab: {
       root: {
-        textTransform: 'none'
-      },
-      selected: {
-        fontWeight: 600
+        textTransform: 'none',
+        '@media (min-width: 960px)': {
+          minWidth: 'inherit'
+        },
+        '&$selected': {
+          fontWeight: 600
+        }
       },
       labelContainer: {
         paddingTop: '12px',
         paddingBottom: '6px',
         paddingLeft: '16px',
-        paddingRight: '16px'
+        paddingRight: '16px',
+        '@media (min-width: 960px)': {
+          padding: 'inherit'
+        }
+      },
+      wrapper: {
+        paddingLeft: 10,
+        paddingRight: 10
       }
     },
-    PrivateTabIndicator: {
+    MuiPrivateTabIndicator: {
       colorSecondary: {
         backgroundColor: colors.charcoal
       }
@@ -212,14 +220,18 @@ const pearsonMuiTheme = {
     MuiButtonBase: {
       root: {
         border: `2px solid ${colors.transparent}`,
-      },
-      focusVisible: {
-        '&:after': pseodoOutline(2)
-      },
+        '&$focusVisible': {
+          '&:after': pseodoOutline(2)
+        }
+      }
     },
     MuiButton: {
       root: {
-        textTransform: 'none'
+        textTransform: 'none',
+        '&$disabled': {
+          backgroundColor: colors.moonlight,
+          border: '0px none'
+        }
       },
       text: {
         borderRadius: pearson.borderRadius.normal,
@@ -251,10 +263,6 @@ const pearsonMuiTheme = {
         '&:hover': {
           backgroundColor: colors.sunflowerYellow
         }
-      },
-      disabled: {
-        backgroundColor: colors.moonlight,
-        border: '0px none'
       },
       contained: {
         padding: '7px 20px',

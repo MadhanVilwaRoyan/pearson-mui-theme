@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { ThemeProvider,  jssPreset } from '@material-ui/styles';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { MuiThemeProvider, createMuiTheme, jssPreset, createGenerateClassName } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -18,7 +16,7 @@ const jss = create({
   // We define a custom insertion point that JSS will look for injecting the styles in the DOM.
   insertionPoint: 'jss-insertion-point'
 });
-
+const generateClassName = createGenerateClassName();
 /**
  * The main App Component.
  *
@@ -43,8 +41,8 @@ class App extends Component {
   render () {
     return (
       <div>
-        <JssProvider jss={jss} classNamePrefix={'pmui'}>
-          <ThemeProvider theme={createMuiTheme(pearsonTheme)}>
+        <JssProvider jss={jss} classNamePrefix={'pmui'} generateClassName={generateClassName}>
+          <MuiThemeProvider theme={createMuiTheme(pearsonTheme)}>
             <AppBar color="primary" position="static" >
               <Toolbar>
                 <IconButton color="inherit" aria-label="Menu" onClick={this.handleMenuClick}>
@@ -66,15 +64,11 @@ class App extends Component {
                 <Route exact path="/dialogs" render={() => (<SampleRenderer name="Dialogs" />)} />
               </div>
             </BrowserRouter>
-          </ThemeProvider>
+          </MuiThemeProvider>
         </JssProvider>
       </div>
     )
   }
 }
-
-App.propTypes = {
-  classes: PropTypes.object.isRequired
-};
 
 export default App;

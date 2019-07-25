@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 
 const styles = theme => ({
   slider: {
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(1)
+    paddingTop: theme.spacing.unit,
+    paddingBottom: theme.spacing.unit
   }
 });
 

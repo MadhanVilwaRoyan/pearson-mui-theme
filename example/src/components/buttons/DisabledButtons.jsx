@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const styles = theme => ({
   button: {
-    margin: theme.spacing(1)
+    margin: theme.spacing.unit
   }
 });
 

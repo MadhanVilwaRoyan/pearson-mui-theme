@@ -27,7 +27,7 @@ const SelectedCircle = ({ classes, size = 'normal', ...other }) => (
 
 SelectedCircle.propTypes = {
   classes: PropTypes.object.isRequired,
-  size: PropTypes.oneOf('small', 'normal')
+  size: PropTypes.oneOf(['small', 'normal'])
 };
 
 export default withStyles(styles)(SelectedCircle);

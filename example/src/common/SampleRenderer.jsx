@@ -8,17 +8,17 @@ const styles = theme => {
   return ({
   root: {
     ...theme.mixins.gutters(),
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
-    margin: `${theme.spacing(1)}px auto`,
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+    margin: `${theme.spacing.unit}px auto`,
     maxWidth: 620,
     [theme.breakpoints.only('xs')]: {
-      margin: theme.spacing(1)
+      margin: theme.spacing.unit
     }
   },
   '@media (max-width: 740px)': {
     root: {
-      margin: theme.spacing(1)
+      margin: theme.spacing.unit
     }
   },
 })

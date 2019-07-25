@@ -25,7 +25,7 @@ const Unselected = ({ classes, size = 'normal', ...other }) => (
 
 Unselected.propTypes = {
   classes: PropTypes.object.isRequired,
-  size: PropTypes.oneOf('small', 'normal')
+  size: PropTypes.oneOf(['small', 'normal'])
 };
 
 export default withStyles(styles)(Unselected);

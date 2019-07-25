@@ -1,6 +1,5 @@
 import React from 'react'
 import CodeRenderer from '../common/CodeRenderer';
-import PropTypes from 'prop-types';
 
 const Avatars = () => (
   <div>
@@ -8,9 +7,5 @@ const Avatars = () => (
     <CodeRenderer name={'avatars/LargeAvatar'} />
   </div>
 );
-
-Avatars.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default Avatars;
