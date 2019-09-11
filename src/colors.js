@@ -1,7 +1,7 @@
 const colors = {
   transparent: 'transparent',
   alto: '#d9d9d9',
-  digitalBlue: '#047b9c',
+  digitalBlue: '#005d83',
   digitalMarineTurquoise: '#19a5a3',
   charcoal: '#252525',
   concrete: '#c7c7c7',

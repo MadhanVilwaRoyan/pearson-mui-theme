@@ -41,7 +41,8 @@ const pearson = {
     }
   },
   borderRadius: {
-    normal: 36
+    normal: 22,
+    large: 32
   },
   lineHeight: {
     xxl: 1.58,
@@ -89,12 +90,12 @@ const pearsonMuiTheme = {
     },
     text: {
       primary: colors.charcoal,
-      secondary: colors.charcoal,
+      secondary: colors.mediumGray,
       disabled: colors.concrete,
       hint: colors.charcoal
     },
     action: {
-      disabled: colors.concrete,
+      disabled: colors.mediumGray,
       disabledBackground: colors.moonlight
     }
   },
@@ -227,18 +228,35 @@ const pearsonMuiTheme = {
     },
     MuiButton: {
       root: {
+        fontSize: 16,
+        lineHeight: 1.25,
         textTransform: 'none',
         '&$disabled': {
-          backgroundColor: colors.moonlight,
-          border: '0px none'
+          backgroundColor: colors.moonlight
         }
+      },
+      label: {
+        minWidth: 104
       },
       text: {
         borderRadius: pearson.borderRadius.normal,
         backgroundColor: colors.alto
       },
       outlined: {
-        borderRadius: pearson.borderRadius.normal
+        boxShadow: '0 5px 22px 4px rgba(0, 0, 0, 0.03), 0 7px 8px -4px rgba(0, 0, 0, 0.05)',
+        borderColor: colors.mediumGray,
+        color: colors.mediumGray,
+        backgroundColor: 'transparent',
+        borderRadius: pearson.borderRadius.normal,
+        '&:hover': {
+          color: colors.charcoal,
+          backgroundColor: 'transparent',
+          borderColor: colors.charcoal
+        },
+        '&$disabled': {
+          border: '1px solid',
+          borderColor: colors.moonlight
+        }
       },
       textPrimary: {
         color: colors.whiteGray,
@@ -249,10 +267,13 @@ const pearsonMuiTheme = {
         }
       },
       outlinedPrimary: {
-        color: colors.whiteGray,
+        padding: '7px 24px',
+        color: colors.white,
         backgroundColor: colors.digitalBlue,
         borderColor: colors.digitalBlue,
         '&:hover': {
+          color: colors.white,
+          borderColor: colors.inkBlue,
           backgroundColor: colors.inkBlue
         }
       },
@@ -266,23 +287,26 @@ const pearsonMuiTheme = {
       },
       contained: {
         padding: '7px 20px',
-        fontSize: '14px',
+        fontSize: 14,
         lineHeight: '18px',
         fontWeight: 600,
-        borderRadius: '36px'
+        borderRadius: pearson.borderRadius.normal
       },
       containedPrimary: {
         color: colors.whiteGray
       },
       sizeSmall: {
-        padding: '7px 12px',
-        borderRadius: '32px'
+        padding: '5px 24px',
+        fontSize: '0.875rem',
+        '& span': {
+          minWidth: 80
+        }
       },
       sizeLarge: {
-        padding: '6px 20px',
+        padding: '9px 24px',
         fontSize: '16px',
         lineHeight: '20px',
-        borderRadius: '40px',
+        borderRadius: pearson.borderRadius.large,
         fontWeight: 600
       }
     },
