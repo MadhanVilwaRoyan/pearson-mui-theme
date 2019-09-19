@@ -4,11 +4,16 @@ Visit [Tab Navigation](https://uxframework.pearson.com/nightly/tab-navigation) i
 
 **Usage**
 ```html
-<AppBar position="static">
-  <Tabs value={value} onChange={this.handleChange}>
+<AppBar color="primary|default" position="static">
+  <Tabs textColor="inherit|primary" value={value} onChange={this.handleChange}>
   <Tab label="Item One" />
   <Tab label="Item Two" />
   <Tab label="Item Three" />
   </Tabs>
 </AppBar>
 ```
+
+|AppBar color|Tabs textColor|Description|
+|:---|:---|:---|
+|primary  | inherit   | Dark Mode Tabs |
+|default  | primary | Regular Light Tabs     |
