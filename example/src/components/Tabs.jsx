@@ -8,7 +8,8 @@ import CodeRenderer from '../common/CodeRenderer';
  */
 const Tabs = () => (
   <div>
-    <CodeRenderer name={'tabs/Tabs'} />
+    <CodeRenderer name={'tabs/SimpleTabs'} />
+    <CodeRenderer name={'tabs/DarkModeTabs'} />
   </div>
 );
 Tabs.displayName = 'Tabs';
