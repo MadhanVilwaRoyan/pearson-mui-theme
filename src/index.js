@@ -176,8 +176,8 @@ const pearsonMuiTheme = {
         }
       },
       wrapper: {
-        paddingLeft: 0,
-        paddingRight: 0
+        paddingLeft: 4,
+        paddingRight: 4
       }
     },
     MuiPrivateTabIndicator: {
