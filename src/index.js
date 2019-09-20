@@ -420,4 +420,17 @@ export default pearsonMuiTheme;
 
 export { default as SelectedCircle } from './icons/SelectedCircle';
 export { default as CardList } from './components/CardList';
+export { default as AddIcon } from './icons/Add';
+export { default as AddItemIcon } from './icons/AddItem';
+export { default as ArchiveIcon } from './icons/Archive';
+export { default as ArrowBackIcon } from './icons/ArrowBack';
+export { default as ChevronBackIcon } from './icons/ChevronBack';
+export { default as ChevronNextIcon } from './icons/ChevronNext';
+export { default as BookmarkoffIcon } from './icons/Bookmarkoff';
+export { default as BookmarkonIcon } from './icons/Bookmarkon';
+export { default as ContentsIcon } from './icons/Contents';
+export { default as NoteBookIcon } from './icons/NoteBook';
+export { default as ResourcesIcon } from './icons/Resources';
+export { default as StudyIcon } from './icons/Study';
+export { default as ExpandIcon } from './icons/Expand';
 export { icons };

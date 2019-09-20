@@ -62,6 +62,7 @@ class App extends Component {
                 <Route exact path="/tabs" render={() => (<SampleRenderer name="Tabs" />)} />
                 <Route exact path="/sliders" render={() => (<SampleRenderer name="Sliders" />)} />
                 <Route exact path="/dialogs" render={() => (<SampleRenderer name="Dialogs" />)} />
+                <Route exact path="/icons" render={() => (<SampleRenderer name="Icons" />)} />
               </div>
             </BrowserRouter>
           </MuiThemeProvider>
