@@ -3,18 +3,31 @@ import colors from './colors';
 import SelectedCircle from './icons/SelectedCircle';
 import Unselected from './icons/Unselected';
 
-const pseodoOutline = (padding) => (
-  {
+const pseodoOutline = (padding, borderRadius, focusColor) => {
+  return {
     content: '""',
     position: 'absolute',
     top: -(padding * 3),
     left: -(padding * 3),
-    borderRadius: 36,
+    borderRadius,
     width: `calc(100% + ${padding * 4}px)`,
     height: `calc(100% + ${padding * 4}px)`,
-    border: `2px solid ${colors.focusBlue}`
+    border: `2px solid ${focusColor}`
   }
-);
+};
+
+const tabPseodoOutline = (borderRadius, focusColor) => {
+  return {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    borderRadius,
+    width: `calc(100% - 4px)`,
+    height: `calc(100% - 4px)`,
+    border: `2px solid ${focusColor}`
+  }
+};
 
 const icons = {
   checkbox: {
@@ -74,7 +87,8 @@ const pearsonMuiTheme = {
     // Name of the component ⚛️
     MuiButtonBase: {
       // The properties to apply
-      disableRipple: true // No more ripple, on the whole application
+      disableRipple: true, // No more ripple, on the whole application
+      focusVisibleClassName: 'pmuiCustomFocusVisible'
     }
   },
   palette: {
@@ -117,6 +131,13 @@ const pearsonMuiTheme = {
     },
     MuiAppBar: {
       colorPrimary: {
+        backgroundColor: colors.digitalBlue,
+        color: colors.white,
+        border: '0 none',
+        boxShadow: 'none'
+      },
+      // eslint-disable-next-line no-dupe-keys
+      colorDefault: {
         backgroundColor: colors.white,
         color: colors.charcoal,
         border: '0 none',
@@ -126,6 +147,8 @@ const pearsonMuiTheme = {
     MuiTab: {
       root: {
         textTransform: 'none',
+        marginRight: 10,
+        marginLeft: 10,
         '@media (min-width: 960px)': {
           minWidth: 'inherit'
         },
@@ -133,23 +156,35 @@ const pearsonMuiTheme = {
           fontWeight: 600
         }
       },
+      textColorInherit: {
+        '&.pmuiCustomFocusVisible': {
+          '&:after': tabPseodoOutline(6, colors.white)
+        }
+      },
+      textColorPrimary: {
+        '&.pmuiCustomFocusVisible': {
+          '&:after': tabPseodoOutline(6, colors.focusBlue)
+        }
+      },
       labelContainer: {
         paddingTop: '12px',
-        paddingBottom: '6px',
-        paddingLeft: '16px',
-        paddingRight: '16px',
+        paddingBottom: '16px',
+        paddingLeft: 4,
+        paddingRight: 4,
         '@media (min-width: 960px)': {
           padding: 'inherit'
         }
       },
       wrapper: {
-        paddingLeft: 10,
-        paddingRight: 10
+        paddingLeft: 4,
+        paddingRight: 4
       }
     },
     MuiPrivateTabIndicator: {
       colorSecondary: {
-        backgroundColor: colors.charcoal
+        backgroundColor: colors.digitalMarineTurquoise,
+        height: 3,
+        marginBottom: 8
       }
     },
     MuiTypography: {
@@ -222,7 +257,7 @@ const pearsonMuiTheme = {
       root: {
         border: `2px solid ${colors.transparent}`,
         '&$focusVisible': {
-          '&:after': pseodoOutline(2)
+          '&:after': pseodoOutline(2, 36, colors.focusBlue)
         }
       }
     },
