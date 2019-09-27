@@ -1,7 +1,7 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import { AddItemIcon } from 'pearson-mui-theme';
+import { SearchIcon } from 'pearson-mui-theme';
 
 
 const styles = theme => ({
@@ -17,10 +17,8 @@ const styles = theme => ({
  */
 const component = ({ classes }) => (
   <div>
-  <AddItemIcon color="primary" className={classes.root} />
-  <AddItemIcon color="secondary" className={classes.root} />
-  <AddItemIcon color="action" className={classes.root} />
-  <AddItemIcon color="disabled" className={classes.root} />
+  <SearchIcon color="action" className={classes.root}/>
+  <SearchIcon color="disabled" className={classes.root}/>
   </div>
 );
 

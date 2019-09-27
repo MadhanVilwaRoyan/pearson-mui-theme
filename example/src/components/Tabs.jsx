@@ -10,6 +10,7 @@ const Tabs = () => (
   <div>
     <CodeRenderer name={'tabs/SimpleTabs'} />
     <CodeRenderer name={'tabs/DarkModeTabs'} />
+    <CodeRenderer name={'tabs/SimpleVerticalTabs'} />
   </div>
 );
 Tabs.displayName = 'Tabs';

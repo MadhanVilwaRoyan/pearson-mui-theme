@@ -1,7 +1,7 @@
-import React from 'react';
-import colors from './colors';
-import SelectedCircle from './icons/SelectedCircle';
-import Unselected from './icons/Unselected';
+import React from 'react'
+import colors from './colors'
+import SelectedCircle from './icons/SelectedCircle'
+import Unselected from './icons/Unselected'
 
 const pseodoOutline = (padding, borderRadius, focusColor) => {
   return {
@@ -452,20 +452,25 @@ const pearsonMuiTheme = {
 };
 
 export default pearsonMuiTheme;
-
-export { default as SelectedCircle } from './icons/SelectedCircle';
-export { default as CardList } from './components/CardList';
-export { default as AddIcon } from './icons/Add';
-export { default as AddItemIcon } from './icons/AddItem';
-export { default as ArchiveIcon } from './icons/Archive';
-export { default as ArrowBackIcon } from './icons/ArrowBack';
-export { default as ChevronBackIcon } from './icons/ChevronBack';
-export { default as ChevronNextIcon } from './icons/ChevronNext';
-export { default as BookmarkoffIcon } from './icons/Bookmarkoff';
-export { default as BookmarkonIcon } from './icons/Bookmarkon';
-export { default as ContentsIcon } from './icons/Contents';
-export { default as NoteBookIcon } from './icons/NoteBook';
-export { default as ResourcesIcon } from './icons/Resources';
-export { default as StudyIcon } from './icons/Study';
-export { default as ExpandIcon } from './icons/Expand';
-export { icons };
+export { default as SelectedCircle } from './icons/SelectedCircle'
+export { default as CardList } from './components/CardList'
+export { default as AddIcon } from './icons/Add'
+export { default as AddItemIcon } from './icons/AddItem'
+export { default as ArchiveIcon } from './icons/Archive'
+export { default as ArrowBackIcon } from './icons/ArrowBack'
+export { default as AssignedIcon } from './icons/Assigned'
+export { default as ChevronBackIcon } from './icons/ChevronBack'
+export { default as ChevronNextIcon } from './icons/ChevronNext'
+export { default as BookmarkoffIcon } from './icons/Bookmarkoff'
+export { default as BookmarkonIcon } from './icons/Bookmarkon'
+export { default as ContentsIcon } from './icons/Contents'
+export { default as NoteBookIcon } from './icons/Notebook'
+export { default as ResourcesIcon } from './icons/Resources'
+export { default as StudyIcon } from './icons/Study'
+export { default as ExpandIcon } from './icons/Expand'
+export { default as FilterIcon } from './icons/Filter'
+export { default as ListenIcon } from './icons/Listen'
+export { default as MenuIcon } from './icons/Menu'
+export { default as RemoveIcon } from './icons/Remove'
+export { default as SearchIcon } from './icons/Search'
+export { icons }

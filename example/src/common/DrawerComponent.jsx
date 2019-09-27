@@ -89,7 +89,7 @@ const DrawerComponent = ({ classes, open, onClose }) => (
           <ListItemIcon>
           <Apps />
           </ListItemIcon>
-          <ListItemText primary="icons" />
+          <ListItemText primary="Icons" />
         </ListItem>
       </List>
     </div>

@@ -21,6 +21,11 @@ const Icons = () => (
     <CodeRenderer name={'icons/ResourcesIcon'} />
     <CodeRenderer name={'icons/StudyIcon'} />
     <CodeRenderer name={'icons/ExpandIcon'} />
+    <CodeRenderer name={'icons/SearchIcon'} />
+    <CodeRenderer name={'icons/RemoveIcon'} />
+    <CodeRenderer name={'icons/ListenIcon'} />
+    <CodeRenderer name={'icons/FilterIcon'} />
+    <CodeRenderer name={'icons/AssignedIcon'} />
   </div>
 );
 

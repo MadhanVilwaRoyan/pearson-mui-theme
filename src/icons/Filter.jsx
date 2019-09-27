@@ -12,17 +12,17 @@ const styles = {
     width: 24,
     height: 24
   }
-};
+}
 
 const FilterIcon = ({ classes, size = 'normal', ...other }) => (
-  <SvgIcon viewBox="0 0 16 12" className={classes[size]} {...other}>
-    <path fill-rule="nonzero" stroke="#252525" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11h2M1 1h14M4 6h8"/>
+  <SvgIcon viewBox='0 0 16 12' tabIndex='0' className={classes[size]} {...other}>
+    <path fill='currentcolor' stroke='#252525' strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M7 11h2M1 1h14M4 6h8' />
   </SvgIcon>
-);
+)
 
-FilterIcon .propTypes = {
+FilterIcon.propTypes = {
   classes: PropTypes.object.isRequired,
   size: PropTypes.oneOf(['small', 'normal'])
-};
+}
 
-export default withStyles(styles)(FilterIcon);
+export default withStyles(styles)(FilterIcon)
