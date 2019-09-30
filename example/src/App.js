@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom';
-import { MuiThemeProvider, createMuiTheme, jssPreset, createGenerateClassName } from '@material-ui/core/styles';
+import { MuiThemeProvider, createMuiTheme,jssPreset, createGenerateClassName } from '@material-ui/core/styles';
+// import { jssPreset, createGenerateClassName} from '@material-ui/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -62,6 +63,7 @@ class App extends Component {
                 <Route exact path="/tabs" render={() => (<SampleRenderer name="Tabs" />)} />
                 <Route exact path="/sliders" render={() => (<SampleRenderer name="Sliders" />)} />
                 <Route exact path="/dialogs" render={() => (<SampleRenderer name="Dialogs" />)} />
+                <Route exact path="/icons" render={() => (<SampleRenderer name="Icons" />)} />
               </div>
             </BrowserRouter>
           </MuiThemeProvider>

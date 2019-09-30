@@ -85,6 +85,12 @@ const DrawerComponent = ({ classes, open, onClose }) => (
           </ListItemIcon>
           <ListItemText primary="Typography" />
         </ListItem>
+        <ListItem component={Link} to="/icons">
+          <ListItemIcon>
+          <Apps />
+          </ListItemIcon>
+          <ListItemText primary="Icons" />
+        </ListItem>
       </List>
     </div>
   </Drawer>

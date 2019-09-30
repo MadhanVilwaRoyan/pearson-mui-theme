@@ -1,0 +1,33 @@
+import React from 'react'
+import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
+import { ChevronNextIcon } from 'pearson-mui-theme';
+
+
+const styles = theme => ({
+  root: {
+    '& > svg': {
+      margin: theme.spacing.unit
+    }
+  }
+});
+
+/**
+ * Renders/demos Call To Action Button.
+ *
+ * @author Mithun Adavelly
+ */
+const component = ({ classes }) => (
+  <div>
+  <ChevronNextIcon color="primary" className={classes.root} />
+  <ChevronNextIcon color="secondary" className={classes.root}/>
+  <ChevronNextIcon color="action" className={classes.root}/>
+  <ChevronNextIcon color="disabled" className={classes.root}/>
+  </div>
+);
+
+component.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(component);
