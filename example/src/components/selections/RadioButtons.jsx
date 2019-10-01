@@ -81,7 +81,7 @@ class RadioButtons extends React.Component {
               control={<Radio color="primary" />}
               label={
                 <div>
-                  <span>D.</span>
+                  <span>D. </span>
                   <span>They concluded that differences in behavior were biological and claimed that people's biology
                   determined how their societies were organized.</span>
                 </div>

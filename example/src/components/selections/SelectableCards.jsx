@@ -1,28 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Checkbox from '@material-ui/core/Checkbox';
-import { withStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
 import FormLabel from '@material-ui/core/FormLabel';
 import { icons, CardList } from 'pearson-mui-theme';
+import IconButton from '@material-ui/core/IconButton';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-const styles = theme => ({
-  card: {
-    maxWidth: 350,
-    height: 300,
-    marginBottom: 24
-  },
-  value: {
-    paddingTop: theme.spacing.unit,
-    paddingBottom: theme.spacing.unit
-  },
-  icon: {
-    width: theme.pearson.iconSize.normal
-  }
-});
 
 /**
  * Renders/demos Selectable Cards.
@@ -45,12 +32,26 @@ class SelectableCards extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
     return (
       <div>
         <CardList>
-          <Card className={classes.card}>
-            <CardActions>
+          <Card>
+            <CardHeader
+              className="small"
+              action={
+                <IconButton>
+                  <MoreVertIcon />
+                </IconButton>
+              }
+              title="Shrimp and Chorizo Paella September 14, 2016 and long header that will not stop here   "
+            />
+            <CardContent>
+              <FormLabel component="legend">
+                How did European scientists and writers in the nineteenth century attempt to make sense of
+                the differences in the appearance and behavior they observed between themselves and non-Europeans?
+              </FormLabel>
+            </CardContent>
+            <CardActions style={{ display: 'flex', justifyContent: 'space-between' }}>
               <Checkbox
                 checked={this.state.checkedA}
                 icon={icons.checkbox.fancy.unchecked}
@@ -59,15 +60,17 @@ class SelectableCards extends React.Component {
                 value="checkedB"
                 color="primary"
               />
+              <div>JUNE 14, 2019</div>
             </CardActions>
+          </Card>
+          <Card>
             <CardContent>
               <FormLabel component="legend">
                 How did European scientists and writers in the nineteenth century attempt to make sense of
                 the differences in the appearance and behavior they observed between themselves and non-Europeans?
               </FormLabel>
+              <Divider />
             </CardContent>
-          </Card>
-          <Card className={classes.card}>
             <CardActions>
               <Checkbox
                 checked={this.state.checkedB}
@@ -78,15 +81,14 @@ class SelectableCards extends React.Component {
                 color="primary"
               />
             </CardActions>
+          </Card>
+          <Card>
             <CardContent>
               <FormLabel component="legend">
                 How did European scientists and writers in the nineteenth century attempt to make sense of
                 the differences in the appearance and behavior they observed between themselves and non-Europeans?
               </FormLabel>
-              <Divider />
             </CardContent>
-          </Card>
-          <Card className={classes.card}>
             <CardActions>
               <Checkbox
                 checked={this.state.checkedC}
@@ -97,14 +99,14 @@ class SelectableCards extends React.Component {
                 color="primary"
               />
             </CardActions>
+          </Card>
+          <Card>
             <CardContent>
               <FormLabel component="legend">
                 How did European scientists and writers in the nineteenth century attempt to make sense of
                 the differences in the appearance and behavior they observed between themselves and non-Europeans?
               </FormLabel>
             </CardContent>
-          </Card>
-          <Card className={classes.card}>
             <CardActions>
               <Checkbox
                 checked={this.state.checkedD}
@@ -115,12 +117,6 @@ class SelectableCards extends React.Component {
                 color="primary"
               />
             </CardActions>
-            <CardContent>
-              <FormLabel component="legend">
-                How did European scientists and writers in the nineteenth century attempt to make sense of
-                the differences in the appearance and behavior they observed between themselves and non-Europeans?
-              </FormLabel>
-            </CardContent>
           </Card>
         </CardList>
       </div>
@@ -128,8 +124,4 @@ class SelectableCards extends React.Component {
   }
 }
 
-SelectableCards.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(SelectableCards);
+export default SelectableCards;

@@ -12,7 +12,7 @@ import ComponentLoader from './ComponentLoader';
 
 const GITHUB_RAW_PATH = 'https://raw.githubusercontent.com/Pearson-Higher-Ed/pearson-mui-theme';
 const GITHUB_CODE_PATH = 'https://github.com/Pearson-Higher-Ed/pearson-mui-theme/blob';
-const REPO_RELATIVE_PATH = 'master/example/src/components';
+const REPO_RELATIVE_PATH = 'develop/example/src/components';
 
 const styles = theme => createStyles({
   root: {

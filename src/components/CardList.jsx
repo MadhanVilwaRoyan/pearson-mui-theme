@@ -7,17 +7,24 @@ const styles = () => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    width: 1098,
+    width: 1138,
     margin: '0 auto'
   },
-  '@media (max-width: 1129px)': {
+  '@media (max-width: 1176px)': {
     root: {
-      width: 724
+      maxWidth: 750
     }
   },
-  '@media (max-width: 749px)': {
+  '@media (max-width: 790px)': {
     root: {
-      width: 370
+      width: 362
+    }
+  },
+  '@media (max-width: 394px)': {
+    root: {
+      width: 362,
+      marginLeft: 16,
+      marginRight: 16
     }
   }
 });

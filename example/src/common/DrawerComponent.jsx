@@ -11,6 +11,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import ViewCarousel from '@material-ui/icons/ViewCarousel';
 import Home from '@material-ui/icons/Home';
 import Apps from '@material-ui/icons/Apps';
+import ThumbUpOutlined from '@material-ui/icons/ThumbUpOutlined';
+import Pages from '@material-ui/icons/Pages';
 import Tab from '@material-ui/icons/Tab';
 import SwapHorizontalCircle from '@material-ui/icons/SwapHorizontalCircle';
 import SelectAllRounded from '@material-ui/icons/Adjust';
@@ -48,6 +50,12 @@ const DrawerComponent = ({ classes, open, onClose }) => (
             <Apps />
           </ListItemIcon>
           <ListItemText primary="Buttons" />
+        </ListItem>
+        <ListItem component={Link} to="/cards">
+          <ListItemIcon>
+            <Pages />
+          </ListItemIcon>
+          <ListItemText primary="Cards" />
         </ListItem>
         <ListItem component={Link} to="/inputs">
           <ListItemIcon>
@@ -87,7 +95,7 @@ const DrawerComponent = ({ classes, open, onClose }) => (
         </ListItem>
         <ListItem component={Link} to="/icons">
           <ListItemIcon>
-          <Apps />
+          <ThumbUpOutlined />
           </ListItemIcon>
           <ListItemText primary="Icons" />
         </ListItem>

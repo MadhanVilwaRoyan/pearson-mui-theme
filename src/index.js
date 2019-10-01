@@ -50,6 +50,7 @@ const pearson = {
       'sans-serif'
     ],
     size: {
+      small: 12,
       normal: 14
     }
   },
@@ -64,15 +65,17 @@ const pearson = {
     m: 1.33,
     s: 1.29,
     xs: 1.25,
-    xxs: 1.167
+    xxs: 1
   },
   colors,
   iconSize: {
     normal: 19
   },
   padding: {
-    small: 10,
-    normal: 16
+    xs: 4,
+    s: 8,
+    m: 12,
+    l: 16
   },
   avatar: {
     small: 60,
@@ -125,11 +128,30 @@ const pearsonMuiTheme = {
   overrides: {
     MuiPaper: {
       root: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        boxSizing: 'border-box',
         fontFamily: pearson.font.size.large,
-        fontSize: pearson.font.size.large
+        fontSize: pearson.font.size.large,
+        padding: 0,
+        marginBottom: 24,
+        marginLeft: 0,
+        boxShadow: '0 5px 22px 4px rgba(0, 0, 0, 0.03), 0 7px 8px -4px rgba(0, 0, 0, 0.05)',
+        border: 'solid 1px rgba(151, 151, 151, 0.07)',
+        backgroundColor: colors.white
+      },
+      elevation1: {
+        minHeight: 100
+      },
+      rounded: {
+        borderRadius: 8
       }
     },
     MuiAppBar: {
+      root: {
+        maxWidth: 4000
+      },
       colorPrimary: {
         backgroundColor: colors.digitalBlue,
         color: colors.white,
@@ -197,18 +219,21 @@ const pearsonMuiTheme = {
         fontSize: 16
       },
       h1: {
-        fontSize: 24
+        fontSize: '1.5em'
       },
       h2: {
-        fontSize: 28,
+        fontSize: '1.75em',
         fontWeight: 'bold',
         lineHeight: pearson.lineHeight.m
       },
       h3: {
-        fontSize: 16,
-        fontWeight: 600,
-        letterSpacing: '0.15px',
-        lineHeight: pearson.lineHeight.m
+        fontSize: '1.25em',
+        fontWeight: 300,
+        fontStyle: 'normal',
+        letterSpacing: 0.37,
+        color: colors.charcoal,
+        lineHeight: pearson.lineHeight.m,
+        marginBottom: 16
       },
       h4: {
         fontSize: 16,
@@ -216,10 +241,10 @@ const pearsonMuiTheme = {
         lineHeight: pearson.lineHeight.xl
       },
       h5: {
-        fontSize: 15,
         letterSpacing: 0.3,
-        lineHeight: pearson.lineHeight.m,
-        color: colors.mediumGray
+        fontSize: 16,
+        lineHeight: pearson.lineHeight.xxs,
+        color: colors.charcoal
       },
       h6: {
         fontSize: 24,
@@ -345,31 +370,65 @@ const pearsonMuiTheme = {
         fontWeight: 600
       }
     },
-    MuiCardActions: {
+    MuiCard: {
       root: {
+        width: 362
+      }
+    },
+    MuiCardActions: {
+      paddingRight: pearson.padding.l,
+      root: {
+        '& div': {
+          fontSize: pearson.font.size.small,
+          color: pearson.colors.charcoal,
+          paddingLeft: 10,
+          letterSpacing: -0.07
+        },
         '@media (min-width:600px)': {
-          paddingLeft: 8,
-          paddingTop: 12
+          paddingLeft: pearson.padding.xs,
+          paddingRight: pearson.padding.m,
+          paddingTop: pearson.padding.xs,
+          paddingBottom: pearson.padding.s
         }
       }
     },
     MuiCardContent: {
       root: {
-        paddingTop: 0,
-        paddingBottom: pearson.padding.normal,
-        paddingLeft: pearson.padding.normal,
-        paddingRight: pearson.padding.normal,
+        paddingTop: pearson.padding.l,
+        paddingBottom: pearson.padding.xs,
+        paddingLeft: pearson.padding.l,
+        paddingRight: pearson.padding.l,
         '@media (min-width:600px)': {
-          paddingLeft: pearson.padding.normal,
-          paddingRight: pearson.padding.small
+          paddingTop: pearson.padding.l,
+          paddingBottom: pearson.padding.xs,
+          paddingLeft: pearson.padding.l,
+          paddingRight: pearson.padding.l
+        }
+      }
+    },
+    MuiCardHeader: {
+      root: {
+        paddingBottom: 0,
+        alignItems: 'flex-start',
+        marginBottom: -28
+      },
+      content: {
+        overflow: 'hidden',
+        '& span': {
+          textOverflow: 'ellipsis',
+          overflow: 'hidden',
+          whiteSpace: 'nowrap',
+          fontSize: '0.6875em',
+          textTransform: 'uppercase',
+          lineHeight: 'normal'
         }
       }
     },
     MuiDivider: {
       root: {
         backgroundColor: colors.alto,
-        marginTop: pearson.padding.normal,
-        marginBottom: pearson.padding.normal
+        marginTop: pearson.padding.l,
+        marginBottom: pearson.padding.l
       }
     },
     MuiPopover: {
@@ -454,6 +513,7 @@ const pearsonMuiTheme = {
 export default pearsonMuiTheme;
 export { default as SelectedCircle } from './icons/SelectedCircle'
 export { default as CardList } from './components/CardList'
+export { default as MediaCard } from './components/MediaCard'
 export { default as AddIcon } from './icons/Add'
 export { default as AddItemIcon } from './icons/AddItem'
 export { default as ArchiveIcon } from './icons/Archive'
