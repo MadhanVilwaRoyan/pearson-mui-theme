@@ -1,4 +1,4 @@
 ### Disabled Icons
-Disble icons using disabled property in IconButton element. Accessibility could be handled using IconButton element.s
+Disble icons using disabled property in IconButton element. Accessibility could be handled using IconButton elements.
 
 
