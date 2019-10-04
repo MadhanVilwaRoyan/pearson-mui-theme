@@ -18,7 +18,7 @@ const styles = theme => ({
 const component = ({ classes }) => (
   <div>
   <ResourcesIcon color="action" className={classes.root}/>
-  <ResourcesIcon color="disabled" className={classes.root}/>
+  <ResourcesIcon color="primary" className={classes.root}/>
   </div>
 );
 

@@ -18,7 +18,7 @@ const styles = theme => ({
 const component = ({ classes }) => (
   <div>
   <ExpandIcon color="action" className={classes.root}/>
-  <ExpandIcon color="disabled" className={classes.root}/>
+  <ExpandIcon color="primary" className={classes.root}/>
   </div>
 );
 

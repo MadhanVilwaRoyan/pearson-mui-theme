@@ -18,7 +18,7 @@ const styles = theme => ({
 const component = ({ classes }) => (
   <div>
   <SearchIcon color="action" className={classes.root}/>
-  <SearchIcon color="disabled" className={classes.root}/>
+  <SearchIcon color="primary" className={classes.root}/>
   </div>
 );
 

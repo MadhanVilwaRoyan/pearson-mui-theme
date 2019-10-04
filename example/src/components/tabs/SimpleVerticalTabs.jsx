@@ -98,12 +98,12 @@ class SimpleVerticalTabs extends React.Component {
           aria-label="Vertical tabs example"
           className={classes.tabs}
         >
-          <Tab label="Back" {...a11yProps(0)} icon={<ArrowBackIcon/>} className={classes.tab}/>
-          <Tab label="Contents" {...a11yProps(1)} icon={<ContentsIcon/>} className={classes.tab}/>
-          <Tab label="History" {...a11yProps(2)} icon={<BookmarkoffIcon/>} className={classes.tab}/>
-          <Tab label="NoteBook" {...a11yProps(3)} icon={<NoteBookIcon/>} className={classes.tab}/>
-          <Tab label="Study" {...a11yProps(4)} icon={<StudyIcon/>} className={classes.tab}/>
-          <Tab label="Resources" {...a11yProps(5)} icon={<ResourcesIcon/>} className={classes.tab}/>
+          <Tab label="Back" {...a11yProps(0)} icon={<ArrowBackIcon enableTabIndex={false}/>} className={classes.tab}/>
+          <Tab label="Contents" {...a11yProps(1)} icon={<ContentsIcon enableTabIndex={false}/>} className={classes.tab}/>
+          <Tab label="History" {...a11yProps(2)} icon={<BookmarkoffIcon enableTabIndex={false}/>} className={classes.tab}/>
+          <Tab label="NoteBook" {...a11yProps(3)} icon={<NoteBookIcon enableTabIndex={false}/>} className={classes.tab}/>
+          <Tab label="Study" {...a11yProps(4)} icon={<StudyIcon enableTabIndex={false}/>} className={classes.tab}/>
+          <Tab label="Resources" {...a11yProps(5)} icon={<ResourcesIcon enableTabIndex={false}/>} className={classes.tab}/>
         </VerticalTabs>
         {value === 0 &&
         <TabContainer value={value} index={0} className={classes.tabContent}> Showing Back tab </TabContainer>}
