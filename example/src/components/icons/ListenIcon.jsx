@@ -18,7 +18,7 @@ const styles = theme => ({
 const component = ({ classes }) => (
   <div>
   <ListenIcon color="action" className={classes.root}/>
-  <ListenIcon color="disabled" className={classes.root}/>
+  <ListenIcon color="primary" className={classes.root}/>
   </div>
 );
 

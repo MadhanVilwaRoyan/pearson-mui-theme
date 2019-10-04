@@ -18,7 +18,7 @@ const styles = theme => ({
 const component = ({ classes }) => (
   <div>
   <StudyIcon color="action" className={classes.root}/>
-  <StudyIcon color="disabled" className={classes.root}/>
+  <StudyIcon color="primary" className={classes.root}/>
   </div>
 );
 

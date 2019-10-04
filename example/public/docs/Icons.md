@@ -15,6 +15,12 @@ Visit [Icons](https://uxframework.pearson.com/nightly/icons) in Pearson UX speci
 <AddItemIcon color="action" className={classes.root}/>
 <AddItemIcon color="disabled" className={classes.root}/>
 
+We can use accessibility using IconButton
+
+<IconButton className={classes.root} aria-label="NoteBook" disabled color="primary">
+    <NoteBookIcon  />
+</IconButton>
+
 ```
 
 

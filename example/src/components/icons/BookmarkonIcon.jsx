@@ -18,7 +18,7 @@ const styles = theme => ({
 const component = ({ classes }) => (
   <div>
   <BookmarkonIcon color="action" className={classes.root}/>
-  <BookmarkonIcon color="disabled" className={classes.root}/>
+  <BookmarkonIcon color="primary" className={classes.root}/>
   </div>
 );
 
