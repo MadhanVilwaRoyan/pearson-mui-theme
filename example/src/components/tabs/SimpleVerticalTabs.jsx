@@ -4,7 +4,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import {withStyles} from '@material-ui/core/styles';
-import {ArrowBackIcon, ContentsIcon, NoteBookIcon, StudyIcon, ResourcesIcon, BookmarkoffIcon} from 'pearson-mui-theme';
+import {ArrowBackIcon, NoteBookIcon, AssignmentIcon, BookmarkoffIcon} from 'pearson-mui-theme';
+
 
 function TabContainer(props) {
   const {children, value, index, ...other} = props;
@@ -44,22 +45,35 @@ const styles = theme => ({
     backgroundColor: '#f5f5f5'
   },
   tabs: {
-    backgroundColor: '#005d83',
+    backgroundColor: '#002e60',
     borderRight: `1px solid ${theme.palette.divider}`,
     width: 72,
     minWidth: 64,
     minHeight: 450
   },
+  activeTab:{
+    opacity: 0.8,
+    backgroundColor:"#005d83"
+  },
   tab: {
     color: '#ffffff',
     margin: 1,
     height: 60,
-    fontSize: 11,
+    fontSize: 10,
     minHeight: 60,
+    opacity:1,
     '&:hover': {
-      backgroundColor: 'rgba(250, 250, 250, 0.6)',
-      opacity: 0.3
+      opacity: 0.8,
+      backgroundColor:"#005d83"
     },
+    '&:active': {
+      opacity: 0.8,
+      backgroundColor:"#005d83"
+    },
+    '&:visited': {
+      opacity: 0.8,
+      backgroundColor:"#005d83"
+    }
   },
   tabContent: {
     width: '100%',
@@ -98,25 +112,20 @@ class SimpleVerticalTabs extends React.Component {
           aria-label="Vertical tabs example"
           className={classes.tabs}
         >
-          <Tab label="Back" {...a11yProps(0)} icon={<ArrowBackIcon enableTabIndex={false}/>} className={classes.tab}/>
-          <Tab label="Contents" {...a11yProps(1)} icon={<ContentsIcon enableTabIndex={false}/>} className={classes.tab}/>
-          <Tab label="History" {...a11yProps(2)} icon={<BookmarkoffIcon enableTabIndex={false}/>} className={classes.tab}/>
-          <Tab label="NoteBook" {...a11yProps(3)} icon={<NoteBookIcon enableTabIndex={false}/>} className={classes.tab}/>
-          <Tab label="Study" {...a11yProps(4)} icon={<StudyIcon enableTabIndex={false}/>} className={classes.tab}/>
-          <Tab label="Resources" {...a11yProps(5)} icon={<ResourcesIcon enableTabIndex={false}/>} className={classes.tab}/>
+          <Tab label="Back" {...a11yProps(0)} icon={<ArrowBackIcon enableTabIndex={false}/>} className={`${classes.tab} ${value===0?classes.activeTab:''}`}
+/>
+          <Tab label="Assignment" {...a11yProps(3)} icon={<AssignmentIcon enableTabIndex={false}/>} className={`${classes.tab} ${value===1?classes.activeTab:''}`}/>
+          <Tab label="Notes" {...a11yProps(3)} icon={<NoteBookIcon enableTabIndex={false}/>} className={`${classes.tab} ${value===2?classes.activeTab:''}`}/>
+         <Tab label="Bookmarks" {...a11yProps(2)} icon={<BookmarkoffIcon enableTabIndex={false}/>} className={`${classes.tab} ${value===3?classes.activeTab:''}`}/>
         </VerticalTabs>
         {value === 0 &&
         <TabContainer value={value} index={0} className={classes.tabContent}> Showing Back tab </TabContainer>}
         {value === 1 &&
-        <TabContainer value={value} index={1} className={classes.tabContent}> Showing contents tab </TabContainer>}
+        <TabContainer value={value} index={1} className={classes.tabContent}> Showing Assinment tab </TabContainer>}
         {value === 2 &&
-        <TabContainer value={value} index={2} className={classes.tabContent}> Showing History tab </TabContainer>}
+        <TabContainer value={value} index={2} className={classes.tabContent}> Showing Notes tab </TabContainer>}
         {value === 3 &&
-        <TabContainer value={value} index={3} className={classes.tabContent}> Showing NoteBook tab </TabContainer>}
-        {value === 4 &&
-        <TabContainer value={value} index={4} className={classes.tabContent}> Showing Study tab </TabContainer>}
-        {value === 5 &&
-        <TabContainer value={value} index={5} className={classes.tabContent}> Showing Resources tab </TabContainer>}
+        <TabContainer value={value} index={4} className={classes.tabContent}> Showing Bookmarks tab </TabContainer>}
       </div>
     );
   }

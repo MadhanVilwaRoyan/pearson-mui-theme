@@ -533,4 +533,5 @@ export { default as ListenIcon } from './icons/Listen'
 export { default as MenuIcon } from './icons/Menu'
 export { default as RemoveIcon } from './icons/Remove'
 export { default as SearchIcon } from './icons/Search'
+export { default as AssignmentIcon } from './icons/Assignment'
 export { icons }
