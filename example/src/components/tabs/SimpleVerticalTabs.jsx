@@ -31,7 +31,7 @@ TabContainer.propTypes = {
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-TabContainer-${index}`,
+    'aria-controls': `vertical-TabContainer-${index}`
   };
 }
 
@@ -53,7 +53,9 @@ const styles = theme => ({
   },
   activeTab:{
     opacity: 0.8,
-    backgroundColor:"#33557b"
+    backgroundColor:"#33557b",
+    borderTopLeftRadius: 8,
+    borderBottomLeftRadius: 8,
   },
   tab: {
     color: '#ffffff',
@@ -64,7 +66,8 @@ const styles = theme => ({
     opacity:1,
     '&:hover': {
       opacity: 0.8,
-      borderRadius: 8,
+      borderTopLeftRadius: 8,
+      borderBottomLeftRadius: 8,
       backgroundColor: "rgba(255, 255, 255, 0.6)"
     },
     '&:active': {
@@ -79,6 +82,10 @@ const styles = theme => ({
   tabContent: {
     width: '100%',
     paddingLeft: '10px'
+  },
+  paddingBottom8:
+  {
+    paddingBottom:'8px'
   }
 });
 const VerticalTabs = withStyles(theme => ({
@@ -113,13 +120,13 @@ class SimpleVerticalTabs extends React.Component {
           aria-label="Vertical tabs example"
           className={classes.tabs}
         >
-          <Tab label="Back" {...a11yProps(0)} icon={<ArrowBackIcon enableTabIndex={false}/>} className={`${classes.tab} ${value===0?classes.activeTab:''}`}/>
-            <Tab label="Contents" {...a11yProps(1)} icon={<ContentsIcon enableTabIndex={false}/>} className={`${classes.tab} ${value===1?classes.activeTab:''}`}/>
-            <Tab label="Bookmarks" {...a11yProps(2)} icon={<BookmarkoffIcon enableTabIndex={false}/>} className={`${classes.tab} ${value===2?classes.activeTab:''}`}/>  
-            <Tab label="NoteBook" {...a11yProps(3)} icon={<NoteBookIcon enableTabIndex={false}/>} className={`${classes.tab} ${value===3?classes.activeTab:''}`}/>
-            <Tab label="Study" {...a11yProps(4)} icon={<StudyIcon enableTabIndex={false}/>} className={`${classes.tab} ${value===4?classes.activeTab:''}`}/>
-            <Tab label="Resources" {...a11yProps(5)} icon={<ResourcesIcon enableTabIndex={false}/>} className={`${classes.tab} ${value===5?classes.activeTab:''}`}/>
-            <Tab label="Assignment" {...a11yProps(6)} icon={<AssignmentIcon enableTabIndex={false}/>} className={`${classes.tab} ${value===6?classes.activeTab:''}`}/>
+          <Tab label="Back" {...a11yProps(0)} icon={<ArrowBackIcon enableTabIndex={false} className={classes.paddingBottom8}/>} className={`${classes.tab} ${value===0?classes.activeTab:''}`}/>
+            <Tab label="Contents" {...a11yProps(1)} icon={<ContentsIcon enableTabIndex={false} className={classes.paddingBottom8}/>} className={`${classes.tab} ${value===1?classes.activeTab:''}`}/>
+            <Tab label="Bookmarks" {...a11yProps(2)} icon={<BookmarkoffIcon enableTabIndex={false} className={classes.paddingBottom8}/>} className={`${classes.tab} ${value===2?classes.activeTab:''}`}/>  
+            <Tab label="NoteBook" {...a11yProps(3)} icon={<NoteBookIcon enableTabIndex={false} className={classes.paddingBottom8}/>} className={`${classes.tab} ${value===3?classes.activeTab:''}`}/>
+            <Tab label="Study" {...a11yProps(4)} icon={<StudyIcon enableTabIndex={false} className={classes.paddingBottom8}/>} className={`${classes.tab} ${value===4?classes.activeTab:''}`}/>
+            <Tab label="Resources" {...a11yProps(5)} icon={<ResourcesIcon enableTabIndex={false} className={classes.paddingBottom8}/>} className={`${classes.tab} ${value===5?classes.activeTab:''}`}/>
+            <Tab label="Assignment" {...a11yProps(6)} icon={<AssignmentIcon enableTabIndex={false} className={classes.paddingBottom8}/>} className={`${classes.tab} ${value===6?classes.activeTab:''}`}/>
         </VerticalTabs>
         {value === 0 &&
         <TabContainer value={value} index={0} className={classes.tabContent}> Showing Back tab </TabContainer>}

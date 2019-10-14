@@ -31,7 +31,7 @@ const styles = theme => ({
     fontFamily: 'OpenSans',
     fontStyle: 'normal',
     fontStretch: 'normal',
-    LetterSpacing: 'normal'
+    letterSpacing: 'normal'
   },
   tabs:{
     backgroundColor: '#002e60',
