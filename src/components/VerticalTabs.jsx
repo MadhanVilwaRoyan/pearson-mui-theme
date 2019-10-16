@@ -14,7 +14,7 @@ const styles = () => ({
 
 })
 
-const VerticalTabs = withStyles(theme => ({
+const CustomVerticalTabs = withStyles(theme => ({
   flexContainer: {
     flexDirection: 'column'
   },
@@ -23,20 +23,20 @@ const VerticalTabs = withStyles(theme => ({
   }
 }))(Tabs)
 
-const CustomVerticalTabs = ({ classes, children, ...other }) => (
-  <VerticalTabs
+const VerticalTabs = ({ classes, children, ...other }) => (
+  <CustomVerticalTabs
     orientation='vertical'
     aria-label='Vertical tabs example'
     className={classes.tabs}
     {...other}
   >
     {children}
-  </VerticalTabs>
+  </CustomVerticalTabs>
 )
 
-CustomVerticalTabs.propTypes = {
+VerticalTabs.propTypes = {
   classes: PropTypes.object.isRequired,
   children: PropTypes.oneOf([PropTypes.arrayOf(PropTypes.node.isRequired), PropTypes.node.isRequired]).isRequired
 }
 
-export default withStyles(styles)(CustomVerticalTabs)
+export default withStyles(styles)(VerticalTabs)

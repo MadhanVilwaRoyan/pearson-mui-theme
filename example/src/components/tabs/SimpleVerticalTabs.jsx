@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import {withStyles} from '@material-ui/core/styles';
 import {ArrowBackIcon, NoteBookIcon, StudyIcon,ResourcesIcon,ContentsIcon, BookmarkoffIcon,AssignmentIcon} from 'pearson-mui-theme';
-import {CustomVerticalTabs} from 'pearson-mui-theme';
+import {VerticalTabs} from 'pearson-mui-theme';
 
 function TabContainer(props) {
   const {children, value, index, ...other} = props;
@@ -58,7 +57,7 @@ class SimpleVerticalTabs extends React.Component {
     const {value} = this.state;
     return (
       <div className={classes.root}>
-        <CustomVerticalTabs value={value}
+        <VerticalTabs value={value}
           onChange={this.handleChange}>
           <Tab label="Back" {...a11yProps(0)} icon={<ArrowBackIcon enableTabIndex={false} className={classes.paddingBottom8}/>} className={`${classes.tab} ${value===0?classes.activeTab:''}`}/>
             <Tab label="Contents" {...a11yProps(1)} icon={<ContentsIcon enableTabIndex={false} className={classes.paddingBottom8}/>} className={`${classes.tab} ${value===1?classes.activeTab:''}`}/>
@@ -67,7 +66,7 @@ class SimpleVerticalTabs extends React.Component {
             <Tab label="Study" {...a11yProps(4)} icon={<StudyIcon enableTabIndex={false} className={classes.paddingBottom8}/>} className={`${classes.tab} ${value===4?classes.activeTab:''}`}/>
             <Tab label="Resources" {...a11yProps(5)} icon={<ResourcesIcon enableTabIndex={false} className={classes.paddingBottom8}/>} className={`${classes.tab} ${value===5?classes.activeTab:''}`}/>
             <Tab label="Assignment" {...a11yProps(6)} icon={<AssignmentIcon enableTabIndex={false} className={classes.paddingBottom8}/>} className={`${classes.tab} ${value===6?classes.activeTab:''}`}/>
-        </CustomVerticalTabs>
+        </VerticalTabs>
         {value === 0 &&
         <TabContainer value={value} index={0} className={classes.tabContent}> Showing Back tab </TabContainer>}
         {value === 1 &&

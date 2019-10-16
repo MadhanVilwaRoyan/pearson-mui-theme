@@ -235,7 +235,8 @@ const pearsonMuiTheme = {
           opacity: 0.8,
           borderTopLeftRadius: 8,
           borderBottomLeftRadius: 8,
-          backgroundColor: 'rgba(255, 255, 255, 0.6)'
+          backgroundColor: 'rgba(255, 255, 255, 0.6)',
+          color: '#003558'
         },
         '&:active': {
           opacity: 0.8,
@@ -555,7 +556,7 @@ const pearsonMuiTheme = {
 export default pearsonMuiTheme;
 export { default as SelectedCircle } from './icons/SelectedCircle'
 export { default as CardList } from './components/CardList'
-export { default as CustomVerticalTabs } from './components/CustomVerticalTabs'
+export { default as VerticalTabs } from './components/VerticalTabs'
 export { default as MediaCard } from './components/MediaCard'
 export { default as AddIcon } from './icons/Add'
 export { default as AddItemIcon } from './icons/AddItem'
