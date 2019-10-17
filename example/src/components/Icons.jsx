@@ -26,6 +26,7 @@ const Icons = () => (
     <CodeRenderer name={'icons/ListenIcon'} />
     <CodeRenderer name={'icons/FilterIcon'} />
     <CodeRenderer name={'icons/AssignedIcon'} />
+    <CodeRenderer name={'icons/AssignmentIcon'} />
     <CodeRenderer name={'icons/DisabledIcons'} />
   </div>
 );

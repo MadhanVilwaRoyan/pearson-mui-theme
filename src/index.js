@@ -209,6 +209,49 @@ const pearsonMuiTheme = {
         marginBottom: 8
       }
     },
+    MuiVerticalTabs: {
+      root: {
+        flexGrow: 1,
+        display: 'flex',
+        minHeight: 224,
+        height: '100%',
+        padding: '20px',
+        backgroundColor: '#f5f5f5'
+      },
+      activeTab: {
+        opacity: 0.8,
+        backgroundColor: '#33557b',
+        borderTopLeftRadius: 8,
+        borderBottomLeftRadius: 8
+      },
+      tab: {
+        color: '#ffffff',
+        margin: 0,
+        height: 80,
+        fontSize: 10,
+        minHeight: 60,
+        opacity: 1,
+        '&:hover': {
+          opacity: 0.8,
+          borderTopLeftRadius: 8,
+          borderBottomLeftRadius: 8,
+          backgroundColor: 'rgba(255, 255, 255, 0.6)',
+          color: '#003558'
+        },
+        '&:active': {
+          opacity: 0.8,
+          backgroundColor: '#33557b'
+        },
+        '&:visited': {
+          opacity: 0.8,
+          backgroundColor: '#33557b'
+        }
+      },
+      tabContent: {
+        width: '100%',
+        paddingLeft: '10px'
+      }
+    },
     MuiTypography: {
       colorSecondary: {
         color: colors.mediumGray
@@ -513,6 +556,7 @@ const pearsonMuiTheme = {
 export default pearsonMuiTheme;
 export { default as SelectedCircle } from './icons/SelectedCircle'
 export { default as CardList } from './components/CardList'
+export { default as VerticalTabs } from './components/VerticalTabs'
 export { default as MediaCard } from './components/MediaCard'
 export { default as AddIcon } from './icons/Add'
 export { default as AddItemIcon } from './icons/AddItem'
@@ -533,4 +577,5 @@ export { default as ListenIcon } from './icons/Listen'
 export { default as MenuIcon } from './icons/Menu'
 export { default as RemoveIcon } from './icons/Remove'
 export { default as SearchIcon } from './icons/Search'
+export { default as AssignmentIcon } from './icons/Assignment'
 export { icons }

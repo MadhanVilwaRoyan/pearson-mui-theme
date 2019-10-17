@@ -27,9 +27,37 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
     backgroundColor: '#f5f5f5',
-    padding: '10px'
+    padding: '10px',
+    fontFamily: 'OpenSans',
+    fontStyle: 'normal',
+    fontStretch: 'normal',
+    letterSpacing: 'normal'
   },
+  tabs:{
+    backgroundColor: '#002e60',
+    fontSize: '14px',
+    fontWeight: 'bold',
+    lineHeight: '1.29',
+    color: '#ffffff',
+  },
+  
 });
+
+const CustomTabs = withStyles({
+  indicator: {
+    height: 3,
+    borderRadius: 2,
+    backgroundColor: '#ffffff'
+  },
+})(Tabs);
+
+const CustomTab = withStyles(theme => ({
+  root: {
+    border:0,
+    fontSize: '14px',
+    lineHeight: '1.29',
+  },
+}))(props => <Tab {...props} />);
 
 class SimpleTabs extends React.Component {
   state = {
@@ -46,16 +74,16 @@ class SimpleTabs extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar color="primary" position="static">
-          <Tabs textColor="inherit" centered={true} value={value} onChange={this.handleChange}>
-            <Tab label="Assignments" />
-            <Tab label="Table of Contents" />
-            <Tab label="Notebook" />
-          </Tabs>
+        <AppBar className={classes.tabs} position="static">
+          <CustomTabs textColor="inherit" centered={true} value={value} onChange={this.handleChange}>
+            <CustomTab label="ASSIGNMENTS" />
+            <CustomTab label="TABLE OF CONTENTS" />
+            <CustomTab label="NOTEBOOK" />
+          </CustomTabs>
         </AppBar>
         {value === 0 && <TabContainer>Showing Assignments</TabContainer>}
         {value === 1 && <TabContainer>Showing Table of Contents</TabContainer>}
-        {value === 2 && <TabContainer>Notebook should be here!</TabContainer>}
+        {value === 2 && <TabContainer>Showing Notebook </TabContainer>}
       </div>
     );
   }
