@@ -210,6 +210,34 @@ const pearsonMuiTheme = {
       }
     },
     MuiVerticalTabs: {
+      DarkMode: {
+        root: {
+          flexGrow: 1,
+          backgroundColor: '#f5f5f5',
+          padding: '10px',
+          fontFamily: 'OpenSans',
+          fontStyle: 'normal',
+          fontStretch: 'normal',
+          letterSpacing: 'normal'
+        },
+        tabs: {
+          backgroundColor: '#002e60',
+          fontSize: '14px',
+          fontWeight: 'bold',
+          lineHeight: '1.29',
+          color: '#ffffff'
+        },
+        indicator: {
+          height: 3,
+          borderRadius: 2,
+          backgroundColor: '#ffffff'
+        },
+        CustomTab: {
+          border: 0,
+          fontSize: '14px',
+          lineHeight: '1.29'
+        }
+      },
       root: {
         flexGrow: 1,
         display: 'flex',
