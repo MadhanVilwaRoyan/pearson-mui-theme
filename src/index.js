@@ -513,6 +513,7 @@ const pearsonMuiTheme = {
 export default pearsonMuiTheme;
 export { default as SelectedCircle } from './icons/SelectedCircle'
 export { default as CardList } from './components/CardList'
+export { default as HorizontalStepper } from './components/HorizontalStepper'
 export { default as MediaCard } from './components/MediaCard'
 export { default as AddIcon } from './icons/Add'
 export { default as AddItemIcon } from './icons/AddItem'
