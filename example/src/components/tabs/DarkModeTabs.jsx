@@ -24,17 +24,17 @@ TabContainer.propTypes = {
 };
 
 const styles = theme => ({
-  root:theme.overrides.MuiVerticalTabs.DarkMode.root,
-  tabs:theme.overrides.MuiVerticalTabs.DarkMode.tabs
+  root:theme.overrides.MuiCustomTabs.DarkMode.root,
+  tabs:theme.overrides.MuiCustomTabs.DarkMode.tabs
   
 });
 
 const CustomTabs = withStyles(theme=>({
-  indicator: theme.overrides.MuiVerticalTabs.DarkMode.indicator
+  indicator: theme.overrides.MuiCustomTabs.DarkMode.indicator
 }))(Tabs);
 
 const CustomTab = withStyles(theme => ({
-  root: theme.overrides.MuiVerticalTabs.DarkMode.CustomTab
+  root: theme.overrides.MuiCustomTabs.DarkMode.CustomTab
 }))(props => <Tab {...props} />);
 
 class SimpleTabs extends React.Component {

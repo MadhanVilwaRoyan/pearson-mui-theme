@@ -202,14 +202,7 @@ const pearsonMuiTheme = {
         paddingRight: 4
       }
     },
-    MuiPrivateTabIndicator: {
-      colorSecondary: {
-        backgroundColor: colors.digitalMarineTurquoise,
-        height: 3,
-        marginBottom: 8
-      }
-    },
-    MuiVerticalTabs: {
+    MuiCustomTabs: {
       DarkMode: {
         root: {
           flexGrow: 1,
@@ -237,7 +230,16 @@ const pearsonMuiTheme = {
           fontSize: '14px',
           lineHeight: '1.29'
         }
-      },
+      }
+    },
+    MuiPrivateTabIndicator: {
+      colorSecondary: {
+        backgroundColor: colors.digitalMarineTurquoise,
+        height: 3,
+        marginBottom: 8
+      }
+    },
+    MuiVerticalTabs: {
       root: {
         flexGrow: 1,
         display: 'flex',

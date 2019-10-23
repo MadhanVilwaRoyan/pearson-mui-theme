@@ -28,14 +28,13 @@ Install the package in your project. In your app root folder do:
 Once package is installed, it can be imported and used as your theme.
 ```javascript
 import pearsonTheme from 'pearson-mui-theme';
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
+import { MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 ```
 
 Wrap the theme provider on the root of your app:
 
 ```html
-<ThemeProvider theme={createMuiTheme(pearsonTheme)}>
+<MuiThemeProvider theme={createMuiTheme(pearsonTheme)}>
   <YourApp />
-</ThemeProvider>
+</MuiThemeProvider>
 ```
