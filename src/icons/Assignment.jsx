@@ -27,7 +27,7 @@ const AssignmentIcon = ({ classes, size = 'normal', enableTabIndex = true, ...ot
 AssignmentIcon.propTypes = {
   classes: PropTypes.object.isRequired,
   size: PropTypes.oneOf(['small', 'normal']),
-  enableTabIndex: PropTypes.IsOptional
+  enableTabIndex: PropTypes.bool
 }
 
 export default withStyles(styles)(AssignmentIcon)

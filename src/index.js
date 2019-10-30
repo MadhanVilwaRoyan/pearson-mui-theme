@@ -3,6 +3,7 @@ import colors from './colors'
 import SelectedCircle from './icons/SelectedCircle'
 import Unselected from './icons/Unselected'
 
+
 const pseodoOutline = (padding, borderRadius, focusColor) => {
   return {
     content: '""',
@@ -164,6 +165,18 @@ const pearsonMuiTheme = {
         color: colors.charcoal,
         border: '0 none',
         boxShadow: 'none'
+      }
+    },
+    MuiStepLabel: {
+      labelContainer: {
+        display: 'none'
+      }
+    },
+    MuiStepper: {
+      horizontal: {
+        padding: 0,
+        margin: 0,
+        backgroundColor: 'inherit'
       }
     },
     MuiTab: {
@@ -443,7 +456,124 @@ const pearsonMuiTheme = {
     },
     MuiCard: {
       root: {
-        width: 362
+        borderRadius: 8,
+        border: 'solid 1px rgba(151, 151, 151, 0.07)',
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        lineHeight: 'normal',
+        fontFamily: 'OpenSans',
+      }
+    },
+    CustomCard: {
+      cardRightIcon: {
+        display: 'flex',
+        width: '100%',
+        flexDirection: 'row-reverse'
+      },
+      cardWithZeroPaddingTop:
+      {
+        paddingTop: 0
+      },
+      cardContentHeader: {
+        fontSize: 12,
+        letterSpacing: -0.07,
+        marginBottom: 10
+      },
+      paddginZero: {
+        padding: 0
+      },
+      flexContainer:{
+        display: 'flex',
+        width: '100%'
+      },
+      cardLeftContent: {
+        width:'9%',
+        paddingRight:'20px',
+        paddinggBottom:'20px',
+        fontSize: '16px',
+        fontWeight: 600,
+        lineHeight: 1.31,
+        textAlign: 'right',
+        color: '#252525'
+      },
+      cardCenterContent: {
+        fontSize: '20px',
+        fontWeight: 600,
+        lineHeight: 1.4,
+        color: '#252525 ',
+        width: '86%',
+        paddingLeft: '20px',
+        paddingRight: '20px',
+        paddingBottom: '20px'
+      },
+      cardCenterActionContent: {
+        fontSize: '20px',
+        fontWeight: 600,
+        lineHeight: 1.4,
+        color: '#252525 ',
+        width: '86%',
+        paddingLeft: '20px',
+        paddingRight: 0,
+        paddingBottom: 0
+      },
+      cardActionCenterContent: {
+        fontSize: '20px',
+        fontWeight: 600,
+        lineHeight: 1.4,
+        color: '#252525 ',
+        width: '66%',
+        paddingLeft: '20px',
+        paddingRight: '20px',
+        paddingBottom: '20px'
+      },
+      cardActionRightContent: {
+        width: '18%',
+        fontSize: '12px',
+        fontWeight: 'normal',
+        lineHeight: 'normal',
+        letterSpacing: '0.17px',
+        color: '#6a7070',
+        display: 'flex',
+        flexDirection: 'row-reverse'
+      },
+      scoreCardActionRightContent: {
+        width: '18%',
+        fontSize: '12px',
+        fontWeight: 'normal',
+        lineHeight: 'normal',
+        letterSpacing: '0.17px',
+        color: '#6a7070',
+        display: 'flex',
+        flexDirection: 'column',
+        textAlign: 'right'
+      },
+      scoreCard: {
+        fontSize: '20px !important',
+        fontWeight: 600,
+        fontStretch: 'normal',
+        fontStyle: 'normal',
+        lineHeight: 1.4,
+        letterSpacing: 'normal',
+        textAlign: 'right',
+        color: '#252525'
+      },
+      smallContent: {
+        fontSize: '12px',
+        lineHeight: 1.0,
+        letterSpacing: '0.2px',
+        color: '#6a7070 !important',
+        fontWeight: 'normal'
+      },
+      hrLine: {
+        width: '100%',
+        border: 'solid 1px #d8d8d8'
+      },
+      vrLine: {
+        height: 48,
+        border: 'solid 1px #d8d8d8'
+      },
+      cardDarkColor: {
+        backgroundColor: '#f5f5f5'
       }
     },
     MuiCardActions: {
@@ -577,6 +707,58 @@ const pearsonMuiTheme = {
         alignItems: 'flex-start',
         paddingTop: 30
       }
+    },
+    CustomStepper: {
+      root: {
+        paddingTop: '5px',
+        paddingBottom: '0px',
+        marginBottom: '0px'
+      },
+      connector: {
+        alternativeLabel: {
+          top: 10,
+          left: 'calc(-50% + 5px)',
+          right: 'calc(50% + 5px)'
+        },
+        active: {
+          '& $line': {
+            borderColor: '#784af4'
+          }
+        },
+        completed: {
+          '& $line': {
+            borderColor: '#784af4'
+          }
+        },
+        line: {
+          borderColor: '#eaeaf0',
+          borderTopWidth: 3,
+          borderRadius: 1
+        }
+      },
+      stepIcon: {
+        root: {
+          color: '#eaeaf0',
+          display: 'flex',
+          height: 22,
+          alignItems: 'center'
+        },
+        active: {
+          color: '#784af4'
+        },
+        circle: {
+          width: 8,
+          height: 8,
+          borderRadius: '50%',
+          backgroundColor: 'currentColor'
+        },
+        completed: {
+          color: '#784af4',
+          zIndex: 1,
+          fontSize: 18
+        }
+      }
+
     }
   }
 };
@@ -606,4 +788,5 @@ export { default as MenuIcon } from './icons/Menu'
 export { default as RemoveIcon } from './icons/Remove'
 export { default as SearchIcon } from './icons/Search'
 export { default as AssignmentIcon } from './icons/Assignment'
+export { default as HorizontalStepper } from './components/HorizontalStepper'
 export { icons }

@@ -27,7 +27,7 @@ const ContentsIcon = ({ classes, size = 'normal', enableTabIndex = true, ...othe
 ContentsIcon.propTypes = {
   classes: PropTypes.object.isRequired,
   size: PropTypes.oneOf(['small', 'normal']),
-  enableTabIndex: PropTypes.object.isOptional
+  enableTabIndex: PropTypes.bool
 }
 
 export default withStyles(styles)(ContentsIcon)

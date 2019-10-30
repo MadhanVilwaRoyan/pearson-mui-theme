@@ -23,7 +23,7 @@ const ResourcesIcon = ({ classes, size = 'normal', enableTabIndex = true, ...oth
 ResourcesIcon.propTypes = {
   classes: PropTypes.object.isRequired,
   size: PropTypes.oneOf(['small', 'normal']),
-  enableTabIndex: PropTypes.object.isOptional
+  enableTabIndex: PropTypes.bool
 }
 
 export default withStyles(styles)(ResourcesIcon)

@@ -23,7 +23,7 @@ const BookmarkoffIcon = ({ classes, size = 'normal', enableTabIndex = true, ...o
 BookmarkoffIcon.propTypes = {
   classes: PropTypes.object.isRequired,
   size: PropTypes.oneOf(['small', 'normal']),
-  enableTabIndex: PropTypes.object.isOptional
+  enableTabIndex: PropTypes.bool
 }
 
 export default withStyles(styles)(BookmarkoffIcon)

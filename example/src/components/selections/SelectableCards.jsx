@@ -9,6 +9,8 @@ import FormLabel from '@material-ui/core/FormLabel';
 import { icons, CardList } from 'pearson-mui-theme';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 
 /**
@@ -16,6 +18,14 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
  *
  * @author Hari Gangadharan
  */
+
+const styles = theme => ({
+  card: {
+    width: 362,
+    backgroundColor: "#ffffff",
+  }
+});
+
 class SelectableCards extends React.Component {
   constructor(props) {
     super(props);
@@ -32,10 +42,11 @@ class SelectableCards extends React.Component {
   };
 
   render() {
+    const {classes} = this.props;
     return (
       <div>
         <CardList>
-          <Card>
+          <Card className={classes.card}>
             <CardHeader
               className="small"
               action={
@@ -63,7 +74,7 @@ class SelectableCards extends React.Component {
               <div>JUNE 14, 2019</div>
             </CardActions>
           </Card>
-          <Card>
+          <Card className={classes.card}>
             <CardContent>
               <FormLabel component="legend">
                 How did European scientists and writers in the nineteenth century attempt to make sense of
@@ -82,7 +93,7 @@ class SelectableCards extends React.Component {
               />
             </CardActions>
           </Card>
-          <Card>
+          <Card className={classes.card}>
             <CardContent>
               <FormLabel component="legend">
                 How did European scientists and writers in the nineteenth century attempt to make sense of
@@ -100,7 +111,7 @@ class SelectableCards extends React.Component {
               />
             </CardActions>
           </Card>
-          <Card>
+          <Card className={classes.card}>
             <CardContent>
               <FormLabel component="legend">
                 How did European scientists and writers in the nineteenth century attempt to make sense of
@@ -124,4 +135,8 @@ class SelectableCards extends React.Component {
   }
 }
 
-export default SelectableCards;
+SelectableCards.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(SelectableCards);

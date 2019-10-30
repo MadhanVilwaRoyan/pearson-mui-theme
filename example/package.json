@@ -9,6 +9,7 @@
     "@material-ui/icons": "^3.0.1",
     "@material-ui/lab": "^3.0.0-alpha.22",
     "axios": "^0.18.0",
+    "clsx": "^1.0.4",
     "jss": "^9.8.7",
     "jsx-to-string": "^1.4.0",
     "pearson-mui-theme": "link:..",

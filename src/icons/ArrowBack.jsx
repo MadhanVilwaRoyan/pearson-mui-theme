@@ -25,7 +25,7 @@ const ArrowBackIcon = ({ classes, size = 'normal', enableTabIndex = true, ...oth
 ArrowBackIcon.propTypes = {
   classes: PropTypes.object.isRequired,
   size: PropTypes.oneOf(['small', 'normal']),
-  enableTabIndex: PropTypes.object.isOptional
+  enableTabIndex: PropTypes.bool
 }
 
 export default withStyles(styles)(ArrowBackIcon)
