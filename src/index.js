@@ -41,10 +41,11 @@ const icons = {
   }
 };
 
+// pearson {} should be used for internal reference only
 const pearson = {
   font: {
     family: [
-      'OpenSans',
+      'Open Sans',
       'Calibri',
       'Tahoma',
       'sans-serif'
@@ -84,7 +85,6 @@ const pearson = {
 };
 
 const pearsonMuiTheme = {
-  pearson,
   spacing: { unit: 16 },
   props: {
     // Name of the component ⚛️
@@ -96,6 +96,7 @@ const pearsonMuiTheme = {
   },
   palette: {
     primary: {
+      light: colors.seaBlue,
       main: colors.digitalBlue,
       dark: colors.inkBlue,
       contrastText: colors.white
@@ -120,8 +121,7 @@ const pearsonMuiTheme = {
     useNextVariants: true,
     color: colors.charcoal,
     fontFamily: pearson.font.family,
-    fontSize: pearson.font.size.normal,
-    lineHeight: pearson.lineHeight.l
+    fontSize: pearson.font.size.normal
   },
   mixins: {
   },
@@ -130,7 +130,6 @@ const pearsonMuiTheme = {
       root: {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between',
         boxSizing: 'border-box',
         fontFamily: pearson.font.size.large,
         fontSize: pearson.font.size.large,
@@ -138,7 +137,6 @@ const pearsonMuiTheme = {
         marginBottom: 24,
         marginLeft: 0,
         boxShadow: '0 5px 22px 4px rgba(0, 0, 0, 0.03), 0 7px 8px -4px rgba(0, 0, 0, 0.05)',
-        border: 'solid 1px rgba(151, 151, 151, 0.07)',
         backgroundColor: colors.white
       },
       elevation1: {
@@ -351,6 +349,7 @@ const pearsonMuiTheme = {
     },
     MuiButtonBase: {
       root: {
+        boxSizing: 'content-box',
         border: `2px solid ${colors.transparent}`,
         '&$focusVisible': {
           '&:after': pseodoOutline(2, 36, colors.focusBlue)
@@ -441,11 +440,6 @@ const pearsonMuiTheme = {
         fontWeight: 600
       }
     },
-    MuiCard: {
-      root: {
-        width: 362
-      }
-    },
     MuiCardActions: {
       paddingRight: pearson.padding.l,
       root: {
@@ -510,8 +504,7 @@ const pearsonMuiTheme = {
         marginTop: '10px'
       },
       paper: {
-        padding: '24px',
-        maxWidth: '294px'
+        padding: '24px'
       }
     },
     MuiSlider: {
